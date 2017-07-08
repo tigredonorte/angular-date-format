@@ -1,0 +1,1207 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-date-format</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-date-format</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">angular-date-format</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/DateFormatModule.html" >DateFormatModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/DateFormatModel.html"  data-type="entity-link" class="active" >DateFormatModel</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/DateFormatModelMock.html" >DateFormatModelMock</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/DateFormatValidatorMock.html" >DateFormatValidatorMock</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">angular-date-format</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-up"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/DateFormatModule.html" >DateFormatModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/DateFormatModel.html"  data-type="entity-link" class="active" >DateFormatModel</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/DateFormatModelMock.html" >DateFormatModelMock</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/DateFormatValidatorMock.html" >DateFormatValidatorMock</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>DateFormatModel</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/date-format.model.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+                
+                    <h3 id="methods">
+                        Methods
+                    </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getBrazilianDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getBrazilianDate(date: string, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/date-format.model.ts:9</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> date2UTC</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>date2UTC(date: string)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/date-format.model.ts:19</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getAmericanDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getAmericanDate(date: string, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/date-format.model.ts:25</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> detectDateType</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>detectDateType(date: string)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/date-format.model.ts:44</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> reverseDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>reverseDate(date: string)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/date-format.model.ts:53</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> string2date</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>string2date(str: string)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/date-format.model.ts:66</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>any</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> diffDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>diffDate(date1: string, date2: string, $type: any)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/date-format.model.ts:92</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> addDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>addDate(date: string, subType: any, amonth: number, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/date-format.model.ts:117</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> subDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>subDate(date: string, subType: any, amonth: number, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/date-format.model.ts:124</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getMonthFirstDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getMonthFirstDate(date: string, utc: boolean, usefullDate: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/date-format.model.ts:141</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getMonthLastDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getMonthLastDate(date: string, utc: boolean, usefullDate: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="159" class="link-to-prism">src/date-format.model.ts:159</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>date</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: string</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>utc</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: boolean convert to utc</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>usefullDate</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: boolean if set true, this function will return last month usefull date</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>string last usefull date</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getLastUsefullDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getLastUsefullDate(date: string, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">src/date-format.model.ts:177</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>date</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: string date to find usefull date</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>utc</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: boolean convert to utc</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>string last usefull date</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> getNextUsefullDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getNextUsefullDate(date: string, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">src/date-format.model.ts:187</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>date</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: string date to find usefull date</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>utc</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>: boolean convert to utc</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                <p>string next usefull date</p>
+            
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> findUsefullDate</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>findUsefullDate(date: string, utc: boolean, next: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="191" class="link-to-prism">src/date-format.model.ts:191</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> date2string</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>date2string(d: any, utc: boolean, includeTime: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="208" class="link-to-prism">src/date-format.model.ts:208</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> getDateString</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>getDateString(d: any, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="218" class="link-to-prism">src/date-format.model.ts:218</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> getTimeString</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>getTimeString(d: any, utc: boolean)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="235" class="link-to-prism">src/date-format.model.ts:235</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import { DateFormatEnum }       from &#x27;./date-format.enum&#x27;;
+import { DateFormatValidator }  from &#x27;./date-format.validator&#x27;;
+
+export class DateFormatModel {
+
+    public getBrazilianDate(date:string,utc?:boolean) {
+        try {
+            var e &#x3D; date.toString().split(&quot;T&quot;);
+            return this.detectDateType(e[0]) &#x3D;&#x3D; &#x27;br&#x27;?e[0]:this.reverseDate(e[0]);
+        }catch(e) {
+            console.log(e);
+            return null;
+        }
+    }
+
+    public date2UTC(date:string): string {
+        if(date &#x3D;&#x3D; null) {return &quot;&quot;;}
+        var dt &#x3D; this.string2date(date);
+        return (dt instanceof Date)?dt.getUTCFullYear()+&quot;-&quot;+(dt.getUTCMonth()+1)+&quot;-&quot;+dt.getUTCDate():&quot;&quot;;
+    }
+
+    public getAmericanDate(date:string, utc?:boolean): string {
+        try {
+            if(date &#x3D;&#x3D; &quot;&quot;) {
+                let dt &#x3D; new Date();
+                return this.date2string(dt, utc);
+            }
+            var e   &#x3D; date.toString().split(&quot;T&quot;);
+            var out &#x3D; (!utc)? this.detectDateType(e[0]) &#x3D;&#x3D; &#x27;db&#x27;?e[0]:this.reverseDate(e[0]):
+                              this.detectDateType(e[0]) &#x3D;&#x3D; &#x27;db&#x27;?this.date2UTC(e[0]):this.date2UTC(this.reverseDate(e[0]));
+            var temp &#x3D; out.split(&#x27;-&#x27;);
+            var mm &#x3D; (parseInt(temp[1]) &lt; 10)?&quot;0&quot; + parseInt(temp[1]):temp[1];
+            var dd &#x3D; (parseInt(temp[2]) &lt; 10)?&quot;0&quot; + parseInt(temp[2]):temp[2];
+            return temp[0]+&#x27;-&#x27;+mm+&#x27;-&#x27;+ dd;
+        }catch(e) {
+            console.log(e);
+            return null;
+        }
+    }
+
+            private detectDateType(date:string) {
+                try {
+                    if(date.indexOf(&#x27;/&#x27;) !&#x3D;&#x3D; -1) {return &#x27;br&#x27;; }
+                    if(date.indexOf(&#x27;-&#x27;) !&#x3D;&#x3D; -1) {return &#x27;db&#x27;;}
+                    return &#x27;none&#x27;;
+                }catch(e) {console.log(e);}
+
+            }
+
+            private reverseDate(date:string) {
+                var data &#x3D; date.split(&quot; &quot;);
+                if(data[0] &#x3D;&#x3D; &#x27;0000-00-00&#x27;|| data[0] &#x3D;&#x3D; &#x27;00/00/0000&#x27;) {return &quot;&quot;;}
+
+                //console.log(data[0], data[0].match(/\//ig));
+                var dateReverseSeparator &#x3D; !data[0].match(/\//ig)? &quot;-&quot; : &quot;/&quot;;
+                var array                &#x3D; data[0].split(dateReverseSeparator).reverse();
+
+                var join &#x3D; !data[0].match(/\//ig) ? &quot;/&quot; : &quot;-&quot;;
+                data[0] &#x3D; array.join(join);
+                return data.join(&quot; &quot;);
+            }
+
+    public string2date(str:string): Date {
+        try {
+            if(typeof str !&#x3D;&#x3D; &#x27;string&#x27;) {return null;}
+            if(str.length &lt; 10) {return null;}
+            var i &#x3D; 10;
+            while (i--) {
+                if (str.charAt(i) &#x3D;&#x3D; &quot;_&quot;) {return null;}
+            }
+
+            str &#x3D; this.getBrazilianDate(str);
+            var dd   &#x3D; parseInt(str.substr(0, 2));
+            var mm   &#x3D; parseInt(str.substr(3, 2));
+            var yy   &#x3D; parseInt(str.substr(6, 4));
+            var date &#x3D; new Date(yy, mm-1, dd);
+
+            if(dd !&#x3D; date.getDate())    {return null;}
+            if(mm !&#x3D; date.getMonth()+1) {return null;}
+            if(yy !&#x3D; date.getFullYear()) {return null;}
+
+            return date;
+        }catch(e) {
+            console.log(e);
+            return null;
+        }
+    }
+
+    public diffDate(date1:string, date2:string, $type:DateFormatEnum) {
+        try {
+            var d1   &#x3D; new Date(this.getAmericanDate(date1));
+            var d2   &#x3D; new Date(this.getAmericanDate(date2));
+            var diff &#x3D; (d1.getTime() - d2.getTime())/1000;
+            var year;
+            switch ($type) {
+                case DateFormatEnum.YEAR:
+                    year &#x3D; new Date(d1.getTime() - d2.getTime());
+                    return year.getUTCFullYear() - 1970;
+                case DateFormatEnum.MONTH:
+                    year &#x3D; new Date(d1.getTime() - d2.getTime());
+                    var signal &#x3D; (diff &lt; 0)?-1:1;
+                    return signal * year.getUTCMonth();
+                case DateFormatEnum.DAY:  return diff/(60*60*24);
+                case DateFormatEnum.HOUR:  return diff/(60*60);
+                case DateFormatEnum.MINUTE: return diff/60;
+            }
+            return diff;
+        }catch(e) {
+            console.log(e);
+            return 0;
+        }
+    }
+
+    public addDate(date?:string, subType?:DateFormatEnum, amonth?:number, utc?:boolean) {
+		    if (!date)   {date    &#x3D; &#x27;&#x27;;}
+		    if (!subType) {subType &#x3D; DateFormatEnum.DAY;}
+		    if (!amonth) {amonth  &#x3D; 1;}
+        return this.subDate(date, subType, -amonth, utc);
+    }
+
+    public subDate(date?:string, subType?:DateFormatEnum, amonth?:number, utc?:boolean) {
+        try {
+            if (!date)   {date    &#x3D; &#x27;&#x27;;}
+            if (!subType) {subType &#x3D; DateFormatEnum.DAY;}
+            if (!amonth) {amonth  &#x3D; 1;}
+            var d &#x3D; new Date(this.getAmericanDate(date));
+            if(subType &#x3D;&#x3D; DateFormatEnum.MONTH) { d.setMonth   (d.getMonth()    - amonth);}
+            if(subType &#x3D;&#x3D; DateFormatEnum.YEAR) { d.setFullYear(d.getFullYear() - amonth);}
+            // This &#x27;-2&#x27; is needed why &#x27;new Date(this.getAmericanDate(date));&#x27;, for example:
+            // - With &#x27;date&#x27;  equals to 28/01/2017
+            // - getAmericanDate will return date for 28/01/2017
+            // - but the &#x27;getDate&#x27; will return 27, starting by 0 and not by 1
+            if(subType &#x3D;&#x3D; DateFormatEnum.DAY)  { d.setDate    (d.getDate()     - amonth + 2);}
+            return this.date2string(d, utc);
+        }catch(e) {console.log(e);}
+    }
+
+    public getMonthFirstDate(date?:string, utc?:boolean, usefullDate?:boolean): string {
+        try {
+            if (!date) {date &#x3D; &#x27;&#x27;;}
+            var d &#x3D; new Date(this.getAmericanDate(date));
+            d.setDate(1);
+            var out &#x3D; this.date2string(d, utc);
+            if(!usefullDate) {return out;}
+            return this.getNextUsefullDate(out, utc);
+        }catch(e) {console.log(e);}
+    }
+
+    /**
+     * @function getMonthLastDate: return last date of month
+     * @param date: string
+     * @param utc: boolean convert to utc
+     * @param usefullDate: boolean if set true, this function will return last month usefull date
+     * @returns string last usefull date
+     */
+    public getMonthLastDate(date?:string, utc?:boolean, usefullDate?:boolean): string {
+        try {
+            if (!date) {date &#x3D; &#x27;&#x27;;}
+            var dt &#x3D; this.getAmericanDate(date);
+            var e &#x3D; dt.split(&quot;-&quot;);
+            var d &#x3D; new Date(parseInt(e[0]), parseInt(e[1]), 0);
+            var out &#x3D; this.date2string(d, utc);
+            if(!usefullDate) {return out;}
+            return this.getLastUsefullDate(out, utc);
+        }catch(e) {console.log(e);}
+    }
+
+    /**
+     * @function getLastUsefullDate: Find last usefull date of date
+     * @param date: string date to find usefull date
+     * @param utc: boolean convert to utc
+     * @returns string last usefull date
+     */
+    public getLastUsefullDate(date?:string, utc?:boolean): string {
+        return this.findUsefullDate(date, utc, false);
+    }
+
+    /**
+     * @function getNextUsefullDate: Find next usefull date of date
+     * @param date: string date to find usefull date
+     * @param utc: boolean convert to utc
+     * @returns string next usefull date
+     */
+    public getNextUsefullDate(date?:string, utc?:boolean): string {
+        return this.findUsefullDate(date, utc, true);
+    }
+
+            private findUsefullDate(date?:string, utc?:boolean, next?:boolean): string {
+                try {
+                    if(!date){date &#x3D; &quot;&quot;;}
+                    date    &#x3D; this.getAmericanDate(date, utc);
+                    var e   &#x3D; date.split(&quot;-&quot;);
+                    var d   &#x3D; this.string2date(date);
+                    var day &#x3D; parseInt(e[2]);
+                    var out &#x3D; this.date2string(d, utc);
+                    while(!DateFormatValidator._IsUsefullDay(out)) {
+                        (next) ? day++ : day--;
+                        d.setDate(day);
+                        out &#x3D; this.date2string(d, utc);
+                    }
+                    return out;
+                }catch(e) {console.log(e);}
+            }
+
+    public date2string(d:Date, utc?:boolean, includeTime?:boolean): string {
+        try {
+            if (d &#x3D;&#x3D; null || !(d instanceof Date)) {console.log(d);return &quot;&quot;;}
+            var date, time &#x3D; &quot;&quot;;
+            date &#x3D; this.getDateString(d, utc);
+            if (includeTime) {time &#x3D; &quot;T&quot;+this.getTimeString(d, utc);}
+            return date+time;
+        }catch(e) {console.log(e);}
+    }
+
+            private getDateString(d:Date, utc?:boolean): string {
+                var year, month, day &#x3D; &quot;&quot;;
+                if(utc) {
+                    year   &#x3D; d.getUTCFullYear().toString();
+                    month &#x3D; (d.getUTCMonth()+1).toString();
+                    day   &#x3D; d.getUTCDate().toString();
+                } else {
+                    year  &#x3D; d.getFullYear().toString();
+                    month &#x3D; (d.getMonth()+1).toString();
+                    day   &#x3D; d.getDate().toString();
+                }
+
+                if(parseInt(month) &lt; 10) {month &#x3D; &quot;0&quot;+month;}
+                if(parseInt(day) &lt; 10)  {day &#x3D; &quot;0&quot;+day;}
+                return year+&quot;-&quot;+month+&#x27;-&#x27;+day;
+            }
+
+            private getTimeString(d:Date, utc?:boolean): string {
+                var hours, minutes, seconds &#x3D; &quot;&quot;;
+                if(utc) {
+                    hours   &#x3D; d.getUTCHours().toString();
+                    minutes &#x3D; d.getUTCMinutes().toString();
+                    seconds &#x3D; d.getUTCSeconds().toString();
+                } else {
+                    hours   &#x3D; d.getHours().toString();
+                    minutes &#x3D; d.getMinutes().toString();
+                    seconds &#x3D; d.getSeconds().toString();
+                }
+                if(parseInt(hours) &lt; 10)  {hours &#x3D; &quot;0&quot;+hours;}
+                if(parseInt(minutes) &lt; 10) {minutes &#x3D; &quot;0&quot;+minutes;}
+                if(parseInt(seconds) &lt; 10) {seconds &#x3D; &quot;0&quot;+seconds;}
+                return hours+&quot;:&quot;+minutes+&quot;:&quot;+seconds;
+            }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>

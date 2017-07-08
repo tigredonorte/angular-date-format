@@ -1,0 +1,28 @@
+{
+  "name": "angular-date-format",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorilainvest/angular-date-format"
+  },
+  "author": {
+    "name": "Guilherme Gois",
+    "email": "guilherme.gois@gorilainvest.com.br"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gorilainvest/angular-date-format/issues"
+  },
+  "module": "angular-date-format.js",
+  "typings": "angular-date-format.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^2.4.10",
+    "@angular/forms": "^2.4.10",
+    "angular2-text-mask": "^1.0.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.7.2"
+  }
+}
