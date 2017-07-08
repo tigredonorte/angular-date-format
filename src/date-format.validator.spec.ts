@@ -1,10 +1,8 @@
 /* Own modules */
-import { DateFormatEnum }      from './date-format.enum';
-import { DateFormatModel }     from './date-format.model';
 import { DateFormatModelMock } from './date-format.model.mock';
 import { DateFormatValidator } from './date-format.validator';
 
-xdescribe('DateFormatValidator', () => {
+describe('DateFormatValidator', () => {
     let validator: DateFormatValidator;
 
     beforeEach(() => {

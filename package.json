@@ -50,8 +50,10 @@
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "node-sass": "^4.5.2",
     "node-sass-tilde-importer": "^1.0.0",
     "node-watch": "^0.5.2",
@@ -61,7 +63,7 @@
     "rxjs": "^5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.2.0",
+    "typescript": "~2.3.0",
     "zone.js": "^0.7.2"
   },
   "engines": {

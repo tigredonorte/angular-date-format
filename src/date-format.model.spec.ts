@@ -16,12 +16,11 @@ xdescribe('DateFormatModel', () => {
             const brDate = model.getBrazilianDate(nonBrDate);
 
             expect(brDate).toEqual(expectedBrDate);
-            //expect(true).toBe(true);
         });
 
         it('brazilian date', () => {
             const expectedBrDate = '1900/01/02T00:00:00-02:00';
-            var brDate = '02-01-1900T00:00:00-02:00';
+            let brDate = '02-01-1900T00:00:00-02:00';
 
             brDate = model.getBrazilianDate(brDate);
 
@@ -73,7 +72,7 @@ xdescribe('DateFormatModel', () => {
 
         it('UTC brazilian date', () => {
             const expectedBrDateUTC = '1900/01/02';
-            var brDateUTC = '02-01-1900';
+            let brDateUTC = '02-01-1900';
 
             brDateUTC = model.getBrazilianDate(brDateUTC, true);
 
@@ -108,7 +107,7 @@ xdescribe('DateFormatModel', () => {
 
         it('american date', () => {
             const expectedAmDate = '1900-01-02T00:00:00-02:00';
-            var amDate = '02-01-1900T00:00:00-02:00';
+            let amDate = '02-01-1900T00:00:00-02:00';
 
             amDate = model.getAmericanDate(amDate);
 
@@ -159,7 +158,7 @@ xdescribe('DateFormatModel', () => {
 
         it('UTC american date', () => {
             const expectedAmDateUTC = '1900-01-02';
-            var amDateUTC = '02-01-1900';
+            let amDateUTC = '02-01-1900';
 
             amDateUTC = model.getAmericanDate(amDateUTC, true);
 
@@ -314,8 +313,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 1 year to date 1-1-1999', () => {
             const expected = '2000-1-1T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.addDate(date, DateFormatEnum.YEAR, 1, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.addDate(date, DateFormatEnum.YEAR, 1, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -326,8 +325,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 1 year to date 1-1-1999 in UTC', () => {
             const expected = '2000-01-01';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.addDate(date, DateFormatEnum.YEAR, 1, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.addDate(date, DateFormatEnum.YEAR, 1, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -338,8 +337,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 10 months to date 1-1-1999', () => {
             const expected = '1999-11-01T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.addDate(date, DateFormatEnum.MONTH, 10, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.addDate(date, DateFormatEnum.MONTH, 10, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -350,8 +349,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 10 months to date 1-1-1999 in UTC', () => {
             const expected = '1999-11-01';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.addDate(date, DateFormatEnum.MONTH, 10, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.addDate(date, DateFormatEnum.MONTH, 10, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -363,8 +362,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 22 months to date 1-1-1999', () => {
             const expected = '2000-11-01T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.addDate(date, DateFormatEnum.MONTH, 22, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.addDate(date, DateFormatEnum.MONTH, 22, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -375,8 +374,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 22 months to date 1-1-1999 in UTC', () => {
             const expected = '2000-11-01';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.addDate(date, DateFormatEnum.MONTH, 22, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.addDate(date, DateFormatEnum.MONTH, 22, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -387,8 +386,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 7 days to date 1-1-1999', () => {
             const expected = '1999-01-8T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.addDate(date, DateFormatEnum.DAY, 7, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.addDate(date, DateFormatEnum.DAY, 7, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -399,8 +398,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 7 days to date 1-1-1999 in UTC', () => {
             const expected = '1999-01-08';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.addDate(date, DateFormatEnum.DAY, 7, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.addDate(date, DateFormatEnum.DAY, 7, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -411,8 +410,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 38 days to date 1-1-1999', () => {
             const expected = '1999-02-8T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.addDate(date, DateFormatEnum.DAY, 38, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.addDate(date, DateFormatEnum.DAY, 38, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -423,8 +422,8 @@ xdescribe('DateFormatModel', () => {
         it('adds 38 days to date 1-1-1999 in UTC', () => {
             const expected = '1999-02-08';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.addDate(date, DateFormatEnum.DAY, 38, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.addDate(date, DateFormatEnum.DAY, 38, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -437,8 +436,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 1 year to date 1-1-1999', () => {
             const expected = '1998-01-01T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.subDate(date, DateFormatEnum.YEAR, 0, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.subDate(date, DateFormatEnum.YEAR, 0, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -449,8 +448,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 1 year to date 1-1-1999 in UTC', () => {
             const expected = '1998-01-01';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.subDate(date, DateFormatEnum.YEAR, 0, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.subDate(date, DateFormatEnum.YEAR, 0, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -461,8 +460,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 10 months to date 1-11-1999', () => {
             const expected = '1999-01-01T00:00:00-02:00';
 
-            var date = '1999-11-1T00:00:00-02:00';
-            var result = model.subDate(date, DateFormatEnum.MONTH, 9, false);
+            let date = '1999-11-1T00:00:00-02:00';
+            let result = model.subDate(date, DateFormatEnum.MONTH, 9, false);
             expect(result).toEqual(expected);
 
             date = '1999-11-1';
@@ -473,8 +472,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 10 months to date 1-11-1999 in UTC', () => {
             const expected = '1999-01-01';
 
-            var date = '1999-11-1T00:00:00+02:00';
-            var result = model.subDate(date, DateFormatEnum.MONTH, 10, true);
+            let date = '1999-11-1T00:00:00+02:00';
+            let result = model.subDate(date, DateFormatEnum.MONTH, 10, true);
             expect(result).toEqual(expected);
 
             date = '1999-11-1';
@@ -486,8 +485,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 22 months to date 1-11-1999', () => {
             const expected = '1998-01-01T00:00:00-02:00';
 
-            var date = '1999-11-1T00:00:00-02:00';
-            var result = model.subDate(date, DateFormatEnum.MONTH, 21, false);
+            let date = '1999-11-1T00:00:00-02:00';
+            let result = model.subDate(date, DateFormatEnum.MONTH, 21, false);
             expect(result).toEqual(expected);
 
             date = '1999-11-1';
@@ -498,8 +497,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 22 months to date 1-11-1999 in UTC', () => {
             const expected = '1998-01-01';
 
-            var date = '1999-11-1T00:00:00+02:00';
-            var result = model.subDate(date, DateFormatEnum.MONTH, 22, true);
+            let date = '1999-11-1T00:00:00+02:00';
+            let result = model.subDate(date, DateFormatEnum.MONTH, 22, true);
             expect(result).toEqual(expected);
 
             date = '1999-11-1';
@@ -510,8 +509,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 7 days to date 1-1-1999', () => {
             const expected = '1998-12-25T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.subDate(date, DateFormatEnum.DAY, 6, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.subDate(date, DateFormatEnum.DAY, 6, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -522,8 +521,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 7 days to date 1-1-1999 in UTC', () => {
             const expected = '1998-12-25';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.subDate(date, DateFormatEnum.DAY, 7, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.subDate(date, DateFormatEnum.DAY, 7, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -534,8 +533,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 38 days to date 1-1-1999', () => {
             const expected = '1998-11-24T00:00:00-02:00';
 
-            var date = '1999-1-1T00:00:00-02:00';
-            var result = model.subDate(date, DateFormatEnum.DAY, 37, false);
+            let date = '1999-1-1T00:00:00-02:00';
+            let result = model.subDate(date, DateFormatEnum.DAY, 37, false);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
@@ -546,8 +545,8 @@ xdescribe('DateFormatModel', () => {
         it('subtracts 38 days to date 1-1-1999 in UTC', () => {
             const expected = '1998-11-24';
 
-            var date = '1999-1-1T00:00:00+02:00';
-            var result = model.subDate(date, DateFormatEnum.DAY, 38, true);
+            let date = '1999-1-1T00:00:00+02:00';
+            let result = model.subDate(date, DateFormatEnum.DAY, 38, true);
             expect(result).toEqual(expected);
 
             date = '1999-1-1';
