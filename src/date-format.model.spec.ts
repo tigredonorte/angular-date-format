@@ -2,7 +2,7 @@
 import { DateFormatEnum }  from './date-format.enum';
 import { DateFormatModel } from './date-format.model';
 
-xdescribe('DateFormatModel', () => {
+describe('DateFormatModel', () => {
     let model: DateFormatModel;
 
     beforeAll(() => {

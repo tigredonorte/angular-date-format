@@ -1,16 +1,21 @@
 {
-  "extends": "./tsconfig.es5.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/spec",
-    "module": "commonjs",
-    "target": "es6",
-    "baseUrl": "",
-    "types": [
-      "jest",
-      "node"
+    "extends": "./tsconfig.es5.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "baseUrl": "",
+        "types": [
+            "jasmine",
+            "node"
+        ]
+    },
+    "files": [
+        "./index.ts",
+        "../base.spec.ts"
+    ],
+    "include": [
+        "./*.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
-  },
-  "files": [
-    "**/*.spec.ts"
-  ]
 }

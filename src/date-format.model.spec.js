@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* Own modules */
 var date_format_enum_1 = require("./date-format.enum");
 var date_format_model_1 = require("./date-format.model");
-xdescribe('DateFormatModel', function () {
+describe('DateFormatModel', function () {
     var model;
     beforeAll(function () {
         model = new date_format_model_1.DateFormatModel();
