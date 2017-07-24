@@ -1,44 +1,73 @@
 {
   "name": "angular-date-format",
   "version": "0.1.0",
-  "scripts": {
-    "build": "gulp build",
-    "build:watch": "gulp",
-    "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n angular-date-format -d docs --hideGenerator",
-    "docs:serve": "npm run docs:build -- -s",
-    "docs:watch": "npm run docs:build -- -s -w",
-    "lint": "tslint --type-check --project src/tsconfig.es5.json src/**/*[^.d$]s.ts",
-    "test": "tsc && karma start"
+  "description": "",
+  "main": "./bundles/angular-date-format.umd.js",
+  "module": "./angular-date-format.es5.js",
+  "es2015": "./angular-date-format.js",
+  "typings": "./angular-date-format.d.ts",
+  "author": {
+    "name": "Thompsom Moreira",
+    "email": "thompsom@gorilainvest.com.br"
   },
+  "contributors": [
+    {
+      "name": "Guilherme J. de C. Gois",
+      "email": "guilherme.gois@gorilainvest.com.br"
+    }
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gorilainvest/angular-date-format"
   },
-  "author": {
-    "name": "Guilherme Gois",
-    "email": "guilherme.gois@gorilainvest.com.br"
+  "bugs": {
+    "url": "https://github.com/gorilainvest/angular-date-format/issues"
+  },
+  "engines": {
+    "node": ">= 6.9.0",
+    "npm": ">= 3.0.0"
   },
   "keywords": [
     "angular"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gorilainvest/angular-date-format/issues"
+  "scripts": {
+    "clean": "rimraf out-tsc dist/*",
+    "prebuild": "npm run clean",
+    "build": "node build.js",
+    "build-demo": "tsc -p src/demo/",
+    "build-demo:watch": "tsc -p src/demo/ -w",
+    "serve": "lite-server -c=bs-config.json",
+    "prestart": "npm run build-demo",
+    "start": "concurrently \"npm run build-demo:watch\" \"npm run serve\"",
+    "test": "karma start karma.conf.js",
+    "coverage": "karma start karma.conf.js --single-run",
+    "pretest:once": "npm run build-test",
+    "test:once": "karma start karma.conf.js --single-run",
+    "preintegration": "npm run build && cd integration && npm run clean && npm install",
+    "integration": "npm run integration:aot && npm run integration:jit",
+    "integration:jit": "cd integration && npm run e2e",
+    "integration:aot": "cd integration && npm run e2e:aot",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "release": "standard-version"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0"
   },
   "devDependencies": {
-    "@angular/common": "^2.4.10",
-    "@angular/compiler": "^2.4.10",
-    "@angular/compiler-cli": "^2.4.10",
-    "@angular/core": "^2.4.10",
-    "@angular/forms": "^2.4.10",
-    "@angular/platform-browser": "^2.4.10",
-    "@angular/platform-browser-dynamic": "^2.4.10",
+    "@angular/common": "~4.1.3",
+    "@angular/compiler": "~4.1.3",
+    "@angular/compiler-cli": "~4.1.3",
+    "@angular/core": "~4.1.3",
+    "@angular/forms": "~4.1.3",
+    "@angular/platform-browser": "~4.1.3",
+    "@angular/platform-browser-dynamic": "~4.1.3",
     "@compodoc/compodoc": "^1.0.0-beta.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "angular2-text-mask": "^1.0.1",
     "codelyzer": "~2.0.0",
+    "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -51,23 +80,30 @@
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-firefox-launcher": "^1.0.1",
+    "karma-html-detailed-reporter": "^1.1.20",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
+    "karma-remap-coverage": "^0.1.4",
+    "karma-typescript": "^3.0.4",
     "karma-typescript-angular2-transform": "^1.0.0",
+    "lite-server": "^2.2.2",
     "node-sass": "^4.5.2",
     "node-sass-tilde-importer": "^1.0.0",
     "node-watch": "^0.5.2",
     "protractor": "~5.1.0",
-    "rollup": "^0.41.6",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.42.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.1",
+    "rollup-plugin-uglify": "^2.0.1",
     "run-sequence": "^1.2.2",
     "rxjs": "^5.1.0",
+    "systemjs": "^0.20.16",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.3.0",
-    "zone.js": "^0.7.2"
-  },
-  "engines": {
-    "node": ">=6.0.0"
+    "zone.js": "^0.8.4"
   }
 }

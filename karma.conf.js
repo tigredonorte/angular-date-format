@@ -1,19 +1,25 @@
 module.exports = function(config) {
-    config.set({
 
+    var libBase = 'src/lib/';
+
+    config.set({
         basePath: '',
         frameworks: ['jasmine', 'karma-typescript'],
 
         files: [
-            { pattern: 'base.spec.ts' },
-            { pattern: 'src/*.ts' }
+            { pattern: './base.spec.ts' },
+            { pattern: libBase + '*[^.d$].ts' }
+        ],
+
+        exclude: [
+            'index.ts'
         ],
 
         preprocessors: {
             '**/*.ts': ['karma-typescript']
         },
 
-        reporters: ['progress', 'karma-typescript'],
+        reporters: ['progress', 'karma-typescript', 'htmlDetailed'],
 
         port: 9876,
 
@@ -30,7 +36,7 @@ module.exports = function(config) {
         concurrency: Infinity,
 
         karmaTypescriptConfig: {
-            tsconfig: 'src/tsconfig.spec.json',
+            tsconfig: libBase + 'tsconfig.spec.json',
             bundlerOptions: {
                 entrypoints: /\.spec\.ts$/,
                 transforms: [
@@ -40,6 +46,11 @@ module.exports = function(config) {
             compilerOptions: {
                 lib: ["ES2015", "DOM"]
             }
+        },
+
+        htmlDetailed: {
+            splitResults: true,
+            useHostedBootstrap: true
         }
     })
 }
