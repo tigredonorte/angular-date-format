@@ -10,7 +10,7 @@ import { DateFormatValidator } from '../validator/date-format.validator';
 
 @Component({
     selector: 'date-format',
-    templateUrl: './date-format.component',
+    templateUrl: './date-format.component.html',
     providers: [
         { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => DateFormatComponent), multi: true },
         { provide: NG_VALIDATORS, useExisting: forwardRef(() => DateFormatComponent), multi: true }
