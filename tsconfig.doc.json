@@ -15,6 +15,7 @@
   },
   "exclude": [
     "src/demo/*",
-    "src/lib/**/*.mock.ts"
+    "src/lib/**/*.mock.ts",
+    "out-tsc/*"
   ]
 }
