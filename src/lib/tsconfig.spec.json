@@ -4,15 +4,14 @@
         "baseUrl": "",
         "module": "commonjs",
         "declaration": false,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "sourceMap": true
     },
     "files": [
-        "./index.ts",
-        "./typings.d.ts",
         "../../base.spec.ts"
     ],
     "include": [
-        "./*.ts"
+        "./**/*.ts"
     ],
     "exclude": [
         "node_modules"
