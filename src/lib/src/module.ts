@@ -1,9 +1,7 @@
-/* Angular modules */
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-/* Own modules */
+import { TextMaskModule } from 'angular2-text-mask';
 import { DateFormatComponent } from './component/date-format.component';
 import { DateFormatModel } from './model/date-format.model';
 import { DateFormatValidator } from './validator/date-format.validator';
@@ -11,7 +9,8 @@ import { DateFormatValidator } from './validator/date-format.validator';
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        TextMaskModule
     ],
     declarations: [
         DateFormatComponent,

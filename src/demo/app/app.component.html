@@ -1,7 +1,21 @@
-<DateFormat
-    usefullDate="1"
-    placeholder="DD/MM/YYYY"
-    maxDate="today"
-    [minDate]="01/01/2000"
-    (ngModelChange)="updateDate($event)">
-</DateFormat>
+<div>
+    <h1>Try some configs:</h1>
+    <input type="datetime" name="" value="">
+    <input type="date" name="" value="">
+    <input type="checkbox" name="" value="Usefull Date">
+    <input type="checkbox" name="" value="Holiday">
+    <input type="checkbox" name="" value="Weekend">
+
+    <date-format
+      [minDate]="options.minDate"
+      [maxDate]="options.maxDate"
+      [usefullDate]="options.usefullDate"
+      [holiday]="options.holiday"
+      [weekend]="options.weekend"
+      placeholder="DD/MM/YYYY"
+      (ngModelChange)="updateDate($event)">
+    </date-format>
+
+    <h2>Raw config:</h2>
+    <p>{{ options | json }}</p>
+</div>

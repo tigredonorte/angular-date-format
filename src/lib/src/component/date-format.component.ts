@@ -23,7 +23,6 @@ export class DateFormatComponent implements ControlValueAccessor, OnChanges, OnI
     @Input() inputname: string;
     @Input() maxDate: string;
     @Input() minDate: string;
-    @Input() options: Object;
     @Input() placeholder: string;
     @Input() readonly: string;
 

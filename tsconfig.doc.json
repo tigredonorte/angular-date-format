@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "types": [
+      "jasmine"
+    ],
+    "sourceMap": true
+  },
+  "exclude": [
+    "src/demo/*",
+    "src/lib/**/*.mock.ts",
+    "out-tsc/*"
+  ]
+}

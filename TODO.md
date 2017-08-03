@@ -1,0 +1,11 @@
+- [ ] Write a better README.md
+- [ ] Write a better demo
+- [ ] Write documentation for DateFormatComponent
+- [ ] Write documentation for DateFormatModel
+- [ ] Write documentation for DateFormatValidator
+- [ ] Fix DateFormatComponent class/spec
+- [ ] Fix DateFormatModel class/spec
+- [ ] Fix DateFormatValidator class/spec
+- [ ] Write e2e test
+- [ ] Write CHANGELOG.md
+- [ ] Write CONTRIBUTING.md
