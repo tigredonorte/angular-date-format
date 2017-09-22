@@ -9,6 +9,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextMaskModule } from 'angular2-text-mask';
 import { DateFormatComponent } from './component/date-format.component';
+import { MdDateFormatComponent } from './component/md/md-date-format.component';
 import { DateFormatModel } from './model/date-format.model';
 import { DateFormatValidator } from './validator/date-format.validator';
 
@@ -46,8 +47,8 @@ export class DateFormatModule {
     MdDatepickerModule,
     MdNativeDateModule
   ],
-  declarations: [DateFormatComponent],
-  exports: [DateFormatComponent],
+  declarations: [MdDateFormatComponent],
+  exports: [MdDateFormatComponent],
   providers: CommonProviders
 })
 export class MdDateFormatModule {
