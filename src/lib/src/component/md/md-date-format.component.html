@@ -8,7 +8,6 @@
         [name]='inputname'
         [(ngModel)]='_date'
 
-        [mdDatepicker]="picker"
         [min]="minDate"
         [max]="maxDate"
 
@@ -16,8 +15,5 @@
         (keyup)='keyUpEvent($event)'
         (keydown)='keyDownEvent($event)'
         [disabled]='isDisabled()'
-        ngDefaultControl
     />
-    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-    <md-datepicker #picker></md-datepicker>
 </md-form-field>
