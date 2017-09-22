@@ -1,0 +1,23 @@
+<md-form-field>
+    <input mdInput
+        type='tel'
+        [class]='cssclass'
+        [textMask]='{mask:dateMask}'
+        [placeholder]='placeholder'
+        [readonly]='readonly'
+        [name]='inputname'
+        [(ngModel)]='_date'
+
+        [mdDatepicker]="picker"
+        [min]="minDate"
+        [max]="maxDate"
+
+        (focus)='focusEvent($event)'
+        (keyup)='keyUpEvent($event)'
+        (keydown)='keyDownEvent($event)'
+        [disabled]='isDisabled()'
+        ngDefaultControl
+    />
+    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+    <md-datepicker #picker></md-datepicker>
+</md-form-field>
