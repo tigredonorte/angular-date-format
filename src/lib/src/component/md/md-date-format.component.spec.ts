@@ -9,29 +9,29 @@ import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 import { MaskedInputDirective } from 'angular2-text-mask';
 
 /* Own modules */
-import { DateFormatComponent } from './date-format.component';
-import { DateFormatModel } from '../model/date-format.model';
-import { DateFormatModelMock } from '../mock/date-format.model.mock';
-import { DateFormatValidator } from '../validator/date-format.validator';
-import { DateFormatValidatorMock } from '../mock/date-format.validator.mock';
+import { MdDateFormatComponent } from './md-date-format.component';
+import { DateFormatModel } from '../../model/date-format.model';
+import { DateFormatModelMock } from '../../mock/date-format.model.mock';
+import { DateFormatValidator } from '../../validator/date-format.validator';
+import { DateFormatValidatorMock } from '../../mock/date-format.validator.mock';
 
-describe('DateFormatComponent', () => {
-    let comp:    DateFormatComponent;
-    let fixture: ComponentFixture<DateFormatComponent>;
+describe('MdDateFormatComponent', () => {
+    let comp:    MdDateFormatComponent;
+    let fixture: ComponentFixture<MdDateFormatComponent>;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports:      [ CommonModule, FormsModule ],
-            declarations: [ DateFormatComponent, MaskedInputDirective ],
+            declarations: [ MdDateFormatComponent, MaskedInputDirective ],
             providers: [
                 { provide: DateFormatModel, useClass: DateFormatModelMock },
                 { provide: DateFormatValidator, useClass: DateFormatValidatorMock },
-                { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => DateFormatComponent), multi: true },
-                { provide: NG_VALIDATORS, useExisting: forwardRef(() => DateFormatComponent), multi: true }
+                { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => MdDateFormatComponent), multi: true },
+                { provide: NG_VALIDATORS, useExisting: forwardRef(() => MdDateFormatComponent), multi: true }
             ]
         });
 
-        fixture = TestBed.createComponent(DateFormatComponent);
+        fixture = TestBed.createComponent(MdDateFormatComponent);
         comp = fixture.componentInstance;
         comp.minDate = '01-01-2016';
         comp.maxDate = '01-01-2017';

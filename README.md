@@ -69,4 +69,4 @@ $ npm run lint
 
 ## License
 
-MIT © [Guilherme Gois](mailto:guilherme.gois@gorilainvest.com.br)
+MIT
