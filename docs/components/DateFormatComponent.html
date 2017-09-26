@@ -1597,7 +1597,7 @@ export class DateFormatComponent implements ControlValueAccessor, OnChanges, OnI
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&#x27;input-group date&#x27;&gt;
     &lt;input
         type&#x3D;&#x27;tel&#x27;
-        [class]&#x3D;&#x27;cssclass&#x27;
+        [ngClass]&#x3D;&#x27;cssclass&#x27;
         [textMask]&#x3D;&#x27;{mask:dateMask}&#x27;
         [placeholder]&#x3D;&#x27;placeholder&#x27;
         [readonly]&#x3D;&#x27;readonly&#x27;
@@ -1637,7 +1637,7 @@ export class DateFormatComponent implements ControlValueAccessor, OnChanges, OnI
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class=\'input-group date\'>    <input        type=\'tel\'        [class]=\'cssclass\'        [textMask]=\'{mask:dateMask}\'        [placeholder]=\'placeholder\'        [readonly]=\'readonly\'        [name]=\'inputname\'        [(ngModel)]=\'_date\'        (focus)=\'focusEvent($event)\'        (keyup)=\'keyUpEvent($event)\'        (keydown)=\'keyDownEvent($event)\'        [disabled]=\'isDisabled()\'        ngDefaultControl    /></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class=\'input-group date\'>    <input        type=\'tel\'        [ngClass]=\'cssclass\'        [textMask]=\'{mask:dateMask}\'        [placeholder]=\'placeholder\'        [readonly]=\'readonly\'        [name]=\'inputname\'        [(ngModel)]=\'_date\'        (focus)=\'focusEvent($event)\'        (keyup)=\'keyUpEvent($event)\'        (keydown)=\'keyDownEvent($event)\'        [disabled]=\'isDisabled()\'        ngDefaultControl    /></div></div>'
     var COMPONENTS = [{'name': 'DateFormatComponent', 'selector': 'date-format'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DateFormatComponent'};
