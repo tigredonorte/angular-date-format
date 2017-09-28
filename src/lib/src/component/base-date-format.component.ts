@@ -17,6 +17,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     @Input() placeholder: string;
     @Input() readonly: string;
 
+    @Input() displayFn: any = () => { };
     @Input() holiday = false;
     @Input() usefullDate = false;
     @Input() weekend = false;
@@ -45,7 +46,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
             if (newValue === '') { return; }
             this._date = newValue;
 
-            const temp = this.dateModel.getAmericanDate(newValue);
+            const temp = this.displayFn(newValue);
             this.propagateChange(temp);
         } catch (e) {
             console.log(e);
@@ -62,6 +63,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
         this.value = '';
         this.disabled = false;
         this.cssclass = 'form-control';
+        this.displayFn = this.dateModel.getAmericanDate.bind(this.dateModel);
     }
 
     ngOnInit() {

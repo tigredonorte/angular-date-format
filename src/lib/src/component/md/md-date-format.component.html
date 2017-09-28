@@ -6,7 +6,8 @@
         [placeholder]='placeholder'
         [readonly]='readonly'
         [name]='inputname'
-        [(ngModel)]='_date'
+        [formControl]='control'
+        [value]='displayFn(_date)'
 
         [min]="minDate"
         [max]="maxDate"
@@ -14,6 +15,6 @@
         (focus)='focusEvent($event)'
         (keyup)='keyUpEvent($event)'
         (keydown)='keyDownEvent($event)'
-        [disabled]='isDisabled()'
     />
+    <md-error>{{error}}</md-error>
 </md-form-field>
