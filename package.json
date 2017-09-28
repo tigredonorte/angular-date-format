@@ -35,6 +35,7 @@
     "clean": "rimraf out-tsc dist/*",
     "prebuild": "npm run clean",
     "build": "node build.js",
+    "build:size": "npm run build; npm run size",
     "build-demo": "tsc -p src/demo/",
     "build-demo:watch": "tsc -p src/demo/ -w",
     "serve": "lite-server -c=bs-config.json",
@@ -44,13 +45,10 @@
     "coverage": "karma start karma.conf.js --single-run",
     "pretest:once": "npm run build-test",
     "test:once": "karma start karma.conf.js --single-run",
-    "preintegration": "npm run build && cd integration && npm run clean && npm install",
-    "integration": "npm run integration:aot && npm run integration:jit",
-    "integration:jit": "cd integration && npm run e2e",
-    "integration:aot": "cd integration && npm run e2e:aot",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "release": "standard-version",
-    "doc": "compodoc -p tsconfig.doc.json -d docs -s"
+    "doc": "compodoc -p tsconfig.doc.json -d docs -s",
+    "size": "size-limit"
   },
   "peerDependencies": {
     "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0"
@@ -101,10 +99,21 @@
     "rollup-plugin-uglify": "^2.0.1",
     "run-sequence": "^1.2.2",
     "rxjs": "^5.1.0",
+    "size-limit": "^0.11.4",
     "systemjs": "^0.20.16",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.3.0",
     "zone.js": "^0.8.4"
-  }
+  },
+  "dependencies": {
+    "@angular/animations": "^4.4.3",
+    "@angular/cdk": "^2.0.0-beta.11",
+    "@angular/material": "^2.0.0-beta.11"
+  },
+  "size-limit": [
+    {
+      "path": "./out-tsc/lib/index.js"
+    }
+  ]
 }
