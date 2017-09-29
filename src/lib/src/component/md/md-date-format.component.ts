@@ -1,12 +1,11 @@
 /* Angular modules */
 import { Component, Input, forwardRef, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 import { DateAdapter, NativeDateAdapter } from '@angular/material';
 
 /* Own modules */
 import { BaseDateFormatComponent } from '../base-date-format.component';
 
-// TODO send this interface to own file and export it
 interface ErrorMapping {
   invalidDateError?: string,
   minDateError?: string,
@@ -24,11 +23,25 @@ interface ErrorMapping {
         { provide: NG_VALIDATORS, useExisting: forwardRef(() => MdDateFormatComponent), multi: true }
     ]
 })
-export class MdDateFormatComponent extends BaseDateFormatComponent implements OnInit {
+export class MdDateFormatComponent extends BaseDateFormatComponent implements ControlValueAccessor, OnInit {
+  @Input() errorMapping: ErrorMapping = {
+    invalidDateError: 'Insert a valid date.',
+    minDateError: 'Insert a date after ${minDate}.',
+    maxDateError: 'Insert a date before ${maxDate}.',
+    usefullDateError: 'Insert a usefull date.',
+    holidayError: 'Not insert a holiday date.',
+    weekendError: 'Not insert a weekend date.'
+  };
+  @Input() control: FormControl;
   @Input() locale = 'pt-BR';
+  
+  public error = '';
+  
+  private statusSubscription;
 
   constructor(private dateAdapter: DateAdapter<NativeDateAdapter>) {
     super();
+    // this.displayFn = this.dateModel.getBrazilianDate.bind(this.dateModel);
   }
 
   ngOnInit() {
