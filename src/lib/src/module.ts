@@ -7,7 +7,7 @@ import {
   MdNativeDateModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TextMaskModule } from 'angular2-text-mask';
+import { TextMaskModule } from 'angular2-text-mask/src/angular2TextMask';
 import { DateFormatComponent } from './component/date-format.component';
 import { MdDateFormatComponent } from './component/md/md-date-format.component';
 import { DateFormatModel } from './model/date-format.model';
