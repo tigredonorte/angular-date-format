@@ -63,7 +63,6 @@
     "@compodoc/compodoc": "^1.0.0-beta.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-    "angular2-text-mask": "^1.0.1",
     "codelyzer": "~2.0.0",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
@@ -107,6 +106,7 @@
   "dependencies": {
     "@angular/animations": "^4.4.3",
     "@angular/cdk": "^2.0.0-beta.11",
-    "@angular/material": "^2.0.0-beta.11"
+    "@angular/material": "^2.0.0-beta.11",
+    "angular2-text-mask": "^1.0.1"
   }
 }
