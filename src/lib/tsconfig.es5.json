@@ -17,5 +17,8 @@
     "flatModuleOutFile": "angular-date-format.js",
     "flatModuleId": "angular-date-format",
     "genDir": "../../out-tsc/lib-gen-dir/"
-  }
+  },
+  "exclude": [
+    "../../node_modules"
+  ]
 }
