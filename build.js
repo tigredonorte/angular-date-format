@@ -68,7 +68,11 @@ return Promise.resolve()
       ],
       plugins: [
         commonjs({
-          include: ['node_modules/rxjs/**']
+          include: [
+            'node_modules/rxjs/**',
+            'node_modules/text-mask-core/dist/textMaskCore.js',
+            'node_modules/angular2-text-mask/dist/angular2TextMask.js'
+          ]
         }),
         sourcemaps(),
         nodeResolve({ jsnext: true, module: true })
