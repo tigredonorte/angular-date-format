@@ -1,5 +1,5 @@
-<md-form-field>
-    <input mdInput
+<mat-form-field>
+    <input matInput
         type='tel'
         [ngClass]='cssclass'
         [textMask]='{mask:dateMask}'
@@ -16,5 +16,5 @@
         (keyup)='keyUpEvent($event)'
         (keydown)='keyDownEvent($event)'
     />
-    <md-error>{{error}}</md-error>
-</md-form-field>
+    <mat-error>{{error}}</mat-error>
+</mat-form-field>

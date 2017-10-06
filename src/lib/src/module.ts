@@ -2,9 +2,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-  MdInputModule,
-  MdDatepickerModule,
-  MdNativeDateModule
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextMaskModule } from 'angular2-text-mask/src/angular2TextMask';
@@ -44,9 +44,9 @@ export class DateFormatModule {
     ...CommonImports,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MdInputModule,
-    MdDatepickerModule,
-    MdNativeDateModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [MdDateFormatComponent],
   exports: [MdDateFormatComponent],
