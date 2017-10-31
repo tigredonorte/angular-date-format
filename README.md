@@ -61,6 +61,12 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ## Development
 
+To run demo application
+```bash
+$ npm start
+$ npm start
+```
+
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 
 ```bash
