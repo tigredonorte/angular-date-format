@@ -1,4 +1,11 @@
-# angular-date-format
+# angular-date-format 
+
+Angular2 date format component. Check our [documentation](https://gorilainvest.github.io/angular-date-format/)
+
+## Requirements
+
+- npm
+- Angular2
 
 ## Installation
 
@@ -8,15 +15,9 @@ To install this library, run:
 $ npm install angular-date-format --save
 ```
 
-## Consuming your library
+## Usage
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install angular-date-format
-```
-
-and then from your Angular `AppModule`:
+Include in your module:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -47,10 +48,15 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<date-format
+  [minDate]="options.minDate"
+  [maxDate]="options.maxDate"
+  [usefullDate]="options.usefullDate"
+  [holiday]="options.holiday"
+  [weekend]="options.weekend"
+  placeholder="DD/MM/YYYY"
+  (ngModelChange)="updateDate($event)">
+</date-format>
 ```
 
 ## Development
