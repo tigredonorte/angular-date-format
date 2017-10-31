@@ -136,7 +136,7 @@
                                 id="xs-classes-links"
                             >
                                 <li class="link">
-                                    <a href="../classes/BaseDateFormatComponent.html" >BaseDateFormatComponent</a>
+                                    <a href="../classes/BaseDateFormatComponent.html"  data-type="entity-link" class="active" >BaseDateFormatComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/BaseDateFormatComponent.html" >BaseDateFormatComponent</a>
@@ -148,7 +148,7 @@
                                     <a href="../classes/DateFormatModel.html" >DateFormatModel</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/DateFormatValidator.html"  data-type="entity-link" class="active" >DateFormatValidator</a>
+                                    <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
@@ -317,7 +317,7 @@
                                        id="classes-links"
                    >
                                        <li class="link">
-                                           <a href="../classes/BaseDateFormatComponent.html" >BaseDateFormatComponent</a>
+                                           <a href="../classes/BaseDateFormatComponent.html"  data-type="entity-link" class="active" >BaseDateFormatComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/BaseDateFormatComponent.html" >BaseDateFormatComponent</a>
@@ -329,7 +329,7 @@
                                            <a href="../classes/DateFormatModel.html" >DateFormatModel</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/DateFormatValidator.html"  data-type="entity-link" class="active" >DateFormatValidator</a>
+                                           <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/DateFormatValidator.html" >DateFormatValidator</a>
@@ -388,7 +388,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>DateFormatValidator</li>
+  <li>BaseDateFormatComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -408,11 +408,19 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>out-tsc/lib/src/validator/date-format.validator.ts</code>
+            <code>out-tsc/lib/src/component/base-date-format.component.ts</code>
         </p>
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="https://angular.io/docs/ts/latest/api/forms/index/ControlValueAccessor-interface.html" target="_blank" >ControlValueAccessor</a></code>
+                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-interface.html" target="_blank" >OnChanges</a></code>
+                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+            </p>
 
 
             <section>
@@ -428,13 +436,28 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
+                                         <a href="#date">date</a>
+                                    </li>
+                                    <li>
+                                         <a href="#dateMask">dateMask</a>
+                                    </li>
+                                    <li>
                                          <a href="#dateModel">dateModel</a>
                                     </li>
                                     <li>
-                                         <a href="#holidays">holidays</a>
+                                         <a href="#dateValidator">dateValidator</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Static</span> <a href="#validator">validator</a>
+                                         <a href="#propagateChange">propagateChange</a>
+                                    </li>
+                                    <li>
+                                         <a href="#touchedChange">touchedChange</a>
+                                    </li>
+                                    <li>
+                                         <a href="#validateFn">validateFn</a>
+                                    </li>
+                                    <li>
+                                         <a href="#value">value</a>
                                     </li>
                                 </ul>
                             </td>
@@ -448,46 +471,49 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#_IsUsefullDay">_IsUsefullDay</a>
+                                        <span class="modifier">Private</span> <a href="#checkTypingMax">checkTypingMax</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Private</span> <a href="#createHolidayDate">createHolidayDate</a>
+                                        <span class="modifier">Private</span> <a href="#checkTypingMin">checkTypingMin</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Private</span> <a href="#easter_date">easter_date</a>
+                                        <span class="modifier">Public</span> <a href="#focusEvent">focusEvent</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#getDateBySpecialString">getDateBySpecialString</a>
+                                        <span class="modifier">Private</span> <a href="#initValue">initValue</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#getDateByString">getDateByString</a>
+                                        <span class="modifier">Public</span> <a href="#isDisabled">isDisabled</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#getHolidays">getHolidays</a>
+                                        <span class="modifier">Public</span> <a href="#keyDownEvent">keyDownEvent</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#isHoliday">isHoliday</a>
+                                        <span class="modifier">Public</span> <a href="#keyUpEvent">keyUpEvent</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#isUsefullDay">isUsefullDay</a>
+                                         <a href="#ngOnChanges">ngOnChanges</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#isValidDate">isValidDate</a>
+                                         <a href="#ngOnInit">ngOnInit</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#isWeekend">isWeekend</a>
+                                         <a href="#registerOnChange">registerOnChange</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#maxDateCheck">maxDateCheck</a>
+                                         <a href="#registerOnTouched">registerOnTouched</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#minDateCheck">minDateCheck</a>
+                                         <a href="#setDisabledState">setDisabledState</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Private</span> <a href="#padout">padout</a>
+                                        <span class="modifier">Private</span> <a href="#setEmptyValue">setEmptyValue</a>
                                     </li>
                                     <li>
-                                        <span class="modifier">Public</span> <a href="#validate">validate</a>
+                                         <a href="#validate">validate</a>
+                                    </li>
+                                    <li>
+                                         <a href="#writeValue">writeValue</a>
                                     </li>
                                 </ul>
                             </td>
@@ -507,7 +533,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:63</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:54</a></div>
                                         </td>
                                     </tr>
             
@@ -524,783 +550,21 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="_IsUsefullDay"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> _IsUsefullDay</b><a href="#_IsUsefullDay"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>_IsUsefullDay(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:15</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>date</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="createHolidayDate"></a>
-                                    <span class="name"><b><span class="modifier">Private</span> createHolidayDate</b><a href="#createHolidayDate"><span class="fa fa-link"></span></a></span>
+                                    <a name="checkTypingMax"></a>
+                                    <span class="name"><b><span class="modifier">Private</span> checkTypingMax</b><a href="#checkTypingMax"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
                                         <span class="modifier-icon fa fa-lock"></span>
-                                    <code>createHolidayDate(timestamp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                                    <code>checkTypingMax(n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:175</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>timestamp</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="easter_date"></a>
-                                    <span class="name"><b><span class="modifier">Private</span> easter_date</b><a href="#easter_date"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-lock"></span>
-                                    <code>easter_date(Y: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="180" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:180</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>Y</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="getDateBySpecialString"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> getDateBySpecialString</b><a href="#getDateBySpecialString"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>getDateBySpecialString(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:69</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>date</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="getDateByString"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> getDateByString</b><a href="#getDateByString"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>getDateByString(dt: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:74</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>dt</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="getHolidays"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> getHolidays</b><a href="#getHolidays"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>getHolidays(year: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:95</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>year</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="isHoliday"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> isHoliday</b><a href="#isHoliday"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>isHoliday(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:127</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>date</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="isUsefullDay"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> isUsefullDay</b><a href="#isUsefullDay"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>isUsefullDay(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:142</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>date</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="isValidDate"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> isValidDate</b><a href="#isValidDate"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>isValidDate(str: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:147</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>str</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="isWeekend"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> isWeekend</b><a href="#isWeekend"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>isWeekend(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:152</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>date</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="maxDateCheck"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> maxDateCheck</b><a href="#maxDateCheck"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>maxDateCheck(val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, maxDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:157</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>val</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>maxDate</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="minDateCheck"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> minDateCheck</b><a href="#minDateCheck"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>minDateCheck(val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, minDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:165</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>val</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td>minDate</td>
-                                                              <td>
-                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="padout"></a>
-                                    <span class="name"><b><span class="modifier">Private</span> padout</b><a href="#padout"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-lock"></span>
-                                    <code>padout(n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:196</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:150</a></div>
                                         </td>
                                     </tr>
             
@@ -1334,7 +598,7 @@
                                         <div>
                                         </div>
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>string | number</code>
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
             
                                         </div>
                                             <div class="io-description">
@@ -1348,21 +612,21 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="validate"></a>
-                                    <span class="name"><b><span class="modifier">Public</span> validate</b><a href="#validate"><span class="fa fa-link"></span></a></span>
+                                    <a name="checkTypingMin"></a>
+                                    <span class="name"><b><span class="modifier">Private</span> checkTypingMin</b><a href="#checkTypingMin"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon fa fa-reset"></span>
-                                    <code>validate(options: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                        <span class="modifier-icon fa fa-lock"></span>
+                                    <code>checkTypingMin(n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:22</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:165</a></div>
                                         </td>
                                     </tr>
             
@@ -1382,7 +646,69 @@
                                                     </thead>
                                                     <tbody>
                                                             <tr>
-                                                              <td>options</td>
+                                                              <td>n</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="focusEvent"></a>
+                                    <span class="name"><b><span class="modifier">Public</span> focusEvent</b><a href="#focusEvent"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-reset"></span>
+                                    <code>focusEvent(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:93</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>event</td>
                                                               <td>
                                                                       <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
@@ -1396,7 +722,674 @@
                                         <div>
                                         </div>
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://angular.io/docs/ts/latest/api/forms/index/ValidatorFn-interface.html" target="_blank" >ValidatorFn</a></code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="initValue"></a>
+                                    <span class="name"><b><span class="modifier">Private</span> initValue</b><a href="#initValue"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-lock"></span>
+                                    <code>initValue(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:175</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>date</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="isDisabled"></a>
+                                    <span class="name"><b><span class="modifier">Public</span> isDisabled</b><a href="#isDisabled"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-reset"></span>
+                                    <code>isDisabled()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:89</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="keyDownEvent"></a>
+                                    <span class="name"><b><span class="modifier">Public</span> keyDownEvent</b><a href="#keyDownEvent"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-reset"></span>
+                                    <code>keyDownEvent(e: KeyboardEvent)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:97</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>e</td>
+                                                              <td>
+                                                                      <code>KeyboardEvent</code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="keyUpEvent"></a>
+                                    <span class="name"><b><span class="modifier">Public</span> keyUpEvent</b><a href="#keyUpEvent"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-reset"></span>
+                                    <code>keyUpEvent(e: KeyboardEvent)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:145</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>e</td>
+                                                              <td>
+                                                                      <code>KeyboardEvent</code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="ngOnChanges"></a>
+                                    <span class="name"><b> ngOnChanges</b><a href="#ngOnChanges"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>ngOnChanges(inputs: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:197</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>inputs</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="ngOnInit"></a>
+                                    <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>ngOnInit()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:67</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="registerOnChange"></a>
+                                    <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>registerOnChange(fn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="253" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:253</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>registerOnChange(fn: any) is a method that registers a handler that should
+            be called when something in the view has changed. It gets a function
+            that tells other form directives and form controls to update their values.
+            In other words, that’s the handler function we want to call whenever
+            price changes through the view.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>fn</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="registerOnTouched"></a>
+                                    <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>registerOnTouched(fn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="262" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:262</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>registerOnTouched(fn: any) Similiar to registerOnChange(), this registers
+            a handler specifically for when a control receives a touch event.
+            We don’t need that in our custom control.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>fn</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="setDisabledState"></a>
+                                    <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>setDisabledState(isDisabled: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:272</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>This function is called when the control status changes to or from &#39;DISABLED&#39;.
+            Depending on the value, it will enable or disable the appropriate DOM element.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>isDisabled</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="setEmptyValue"></a>
+                                    <span class="name"><b><span class="modifier">Private</span> setEmptyValue</b><a href="#setEmptyValue"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon fa fa-lock"></span>
+                                    <code>setEmptyValue()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="189" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:189</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="validate"></a>
+                                    <span class="name"><b> validate</b><a href="#validate"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>validate(c: <a href="https://angular.io/docs/ts/latest/api/forms/index/FormControl-class.html" target="_blank">FormControl</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:221</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>c</td>
+                                                              <td>
+                                                                      <code><a href="https://angular.io/docs/ts/latest/api/forms/index/FormControl-class.html" target="_blank" >FormControl</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="writeValue"></a>
+                                    <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>writeValue(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:234</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>writeValue(obj: any) is the method that writes a new value from the form model
+            into the view or (if needed) DOM property. This is where we want to update our
+            counterValue model, as that’s the thing that is used in the view.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>value</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                             <div class="io-description">
@@ -1414,6 +1407,52 @@
                     <h3 id="inputs">
                         Properties
                     </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="date"></a>
+                                    <span class="name"><b> date</b><a href="#date"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>date:     <code></code>
+            </code>
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:34</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="dateMask"></a>
+                                    <span class="name"><b> dateMask</b><a href="#dateMask"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>dateMask:     <code></code>
+            </code>
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:29</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
@@ -1436,7 +1475,7 @@
                                 </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:12</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:26</a></div>
                                         </td>
                                     </tr>
             
@@ -1447,36 +1486,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="holidays"></a>
-                                    <span class="name"><b> holidays</b><a href="#holidays"><span class="fa fa-link"></span></a></span>
+                                    <a name="dateValidator"></a>
+                                    <span class="name"><b> dateValidator</b><a href="#dateValidator"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>holidays:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:13</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="validator"></a>
-                                    <span class="name"><b><span class="modifier">Static</span> validator</b><a href="#validator"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-reset"></span><code>validator:     <code><a href="../classes/DateFormatValidator.html" target="_self" >DateFormatValidator</a></code>
+                                    <code>dateValidator:     <code><a href="../classes/DateFormatValidator.html" target="_self" >DateFormatValidator</a></code>
             </code>
                                 </td>
                             </tr>
@@ -1488,7 +1504,123 @@
                                 </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">out-tsc/lib/src/validator/date-format.validator.ts:10</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:27</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="propagateChange"></a>
+                                    <span class="name"><b> propagateChange</b><a href="#propagateChange"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>propagateChange:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            </code>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:30</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="touchedChange"></a>
+                                    <span class="name"><b> touchedChange</b><a href="#touchedChange"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>touchedChange:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            </code>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:31</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="validateFn"></a>
+                                    <span class="name"><b> validateFn</b><a href="#validateFn"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>validateFn:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            </code>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:32</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="value"></a>
+                                    <span class="name"><b> value</b><a href="#value"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>value:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+            </code>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+            
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">out-tsc/lib/src/component/base-date-format.component.ts:25</a></div>
                                         </td>
                                     </tr>
             
@@ -1500,201 +1632,283 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { ValidatorFn, AbstractControl} from &#x27;@angular/forms&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Input } from &#x27;@angular/core&#x27;;
+import { OnInit, OnChanges } from &#x27;@angular/core&#x27;;
+import { FormControl, ControlValueAccessor } from &#x27;@angular/forms&#x27;;
 
 /* Own modules */
-import { DateFormatEnum }   from &#x27;../model/date-format.enum&#x27;;
-import { DateFormatModel }  from &#x27;../model/date-format.model&#x27;;
+import { DateFormatModel } from &#x27;../model/date-format.model&#x27;;
+import { DateFormatValidator } from &#x27;../validator/date-format.validator&#x27;;
 
-export class DateFormatValidator {
+export abstract class BaseDateFormatComponent implements ControlValueAccessor, OnChanges, OnInit {
 
-    static validator: DateFormatValidator &#x3D; null;
+    @Input() cssclass: string;
+    @Input() disabled: boolean;
+    @Input() inputname: string;
+    @Input() maxDate: string;
+    @Input() minDate: string;
+    @Input() placeholder: string;
+    @Input() readonly: string;
 
+    @Input() holiday &#x3D; false;
+    @Input() usefullDate &#x3D; false;
+    @Input() weekend &#x3D; false;
+    @Input() _date &#x3D; &#x27;&#x27;;
+
+    value: string;
     dateModel: DateFormatModel &#x3D; null;
-    holidays &#x3D; new Array();
+    dateValidator: DateFormatValidator &#x3D; null;
 
-    public static _IsUsefullDay(date: string) {
-        if (DateFormatValidator.validator &#x3D;&#x3D;&#x3D; null) {
-            DateFormatValidator.validator &#x3D; new DateFormatValidator();
-        }
-        return DateFormatValidator.validator.isUsefullDay(date);
+    dateMask &#x3D; [/[0-3]/, /\d/, &#x27;/&#x27;, /[0-1]/, /\d/, &#x27;/&#x27;, /\d/, /\d/, /\d/, /\d/];
+    propagateChange: any &#x3D; () &#x3D;&gt; { };
+    touchedChange: any &#x3D; () &#x3D;&gt; { };
+    validateFn: any &#x3D; () &#x3D;&gt; { };
+
+    get date() {
+        return this._date;
     }
-
-    public static validate(options: any): ValidatorFn {
-        let validator &#x3D; new DateFormatValidator();
-        let model &#x3D; new DateFormatModel();
-        return function (c: AbstractControl) {
-            try {
-                if (typeof options.minDate !&#x3D;&#x3D; &#x27;undefined&#x27;
-                    &amp;&amp; options.minDate &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
-                    options.minDate &#x3D; model.getAmericanDate(&#x27;&#x27;);
-                }
-
-                if (typeof options.maxDate !&#x3D;&#x3D; &#x27;undefined&#x27;
-                    &amp;&amp; options.maxDate &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
-                    options.maxDate &#x3D; model.getAmericanDate(&#x27;&#x27;);
-                }
-
-                let date &#x3D; c.value;
-                let userDate &#x3D; model.getBrazilianDate(date);
-                if (false &#x3D;&#x3D;&#x3D; validator.isValidDate(date)) {
-                    return {invalidDateError: {given: userDate}};
-                }
-                if (false &#x3D;&#x3D;&#x3D; validator.minDateCheck(date, options.minDate)) {
-                    return {minDateError: {given: userDate, minDate: model.getBrazilianDate(options.minDate)}};
-                }
-                if (false &#x3D;&#x3D;&#x3D; validator.maxDateCheck(date, options.maxDate)) {
-                    return {maxDateError: {given: userDate, maxDate: model.getBrazilianDate(options.maxDate)}};
-                }
-                if (options.usefullDate &amp;&amp; false &#x3D;&#x3D;&#x3D; validator.isUsefullDay(date)) {
-                    return {usefullDateError: {given: userDate}};
-                }
-                if (options.holiday &amp;&amp; false &#x3D;&#x3D;&#x3D; validator.isHoliday(date)) {
-                    return {holidayError: {given: userDate}};
-                }
-                if (options.weekend &amp;&amp; false &#x3D;&#x3D;&#x3D; validator.isWeekend(date)) {
-                    return {weekendError: {given: userDate}};
-                }
-                return null;
-            }catch (e) {
-                console.log(e);
-                return null;
+    set date(newValue) {
+        try {
+            if (!newValue || newValue &#x3D;&#x3D;&#x3D; &#x27;&#x27; || newValue &#x3D;&#x3D; null) {
+                this.setEmptyValue();
+                return;
             }
-        };
-    }
 
-    public constructor() {
-        this.dateModel &#x3D; new DateFormatModel();
-    }
+            newValue &#x3D; this.initValue(newValue);
+            if (newValue &#x3D;&#x3D;&#x3D; &#x27;&#x27;) { return; }
+            this._date &#x3D; newValue;
 
-    public getDateBySpecialString(date: string): string {
-        if (date &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) { return this.dateModel.getAmericanDate(&#x27;&#x27;); }
-        return date;
-    }
-
-    public getDateByString(dt: string): Date {
-        try {
-            if (typeof dt &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27; || dt &#x3D;&#x3D;&#x3D; null || dt &#x3D;&#x3D;&#x3D; &#x27;&#x27;) { return null; }
-            if (typeof dt &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) { return dt; }
-
-            const e &#x3D; dt.split(&#x27;T&#x27;);
-            const temp &#x3D; e[0].split(&#x27;-&#x27;);
-            const dt2 &#x3D; new Date(
-                parseInt(temp[0], 10),
-                parseInt(temp[1], 10) - 1,
-                parseInt(temp[2], 10)
-            );
-
-            if (dt2.toString() &#x3D;&#x3D;&#x3D; &#x27;Invalid Date&#x27;) { return null; }
-            return dt2;
-        }catch (e) {
-            console.warn(e);
-            return null;
-        }
-    }
-
-    public getHolidays(year: string): any {
-        if (typeof this.holidays[year] !&#x3D;&#x3D; &#x27;undefined&#x27;) { return this.holidays[year]; }
-
-        const day &#x3D; 86400;
-
-        let dates &#x3D; new Array();
-        dates[&#x27;pascoa&#x27;] &#x3D; this.easter_date(parseInt(year, 10));
-        dates[&#x27;sexta_santa&#x27;] &#x3D; dates[&#x27;pascoa&#x27;] - (2 * day);
-        dates[&#x27;carnaval&#x27;] &#x3D; dates[&#x27;pascoa&#x27;] - (47 * day);
-        dates[&#x27;carnaval2&#x27;] &#x3D; dates[&#x27;pascoa&#x27;] - (46 * day);
-        dates[&#x27;corpus_cristi&#x27;] &#x3D; dates[&#x27;pascoa&#x27;] + (60 * day);
-
-        let holidays &#x3D; new Array();
-        holidays.push(year + &#x27;-01-01&#x27;);
-        holidays.push(this.createHolidayDate(dates[&#x27;carnaval&#x27;]));
-        holidays.push(this.createHolidayDate(dates[&#x27;carnaval2&#x27;]));
-        holidays.push(this.createHolidayDate(dates[&#x27;sexta_santa&#x27;]));
-        holidays.push(this.createHolidayDate(dates[&#x27;pascoa&#x27;]));
-        holidays.push(year + &#x27;-04-21&#x27;);
-        holidays.push(year + &#x27;-05-01&#x27;);
-        holidays.push(year + &#x27;-09-07&#x27;);
-        holidays.push(this.createHolidayDate(dates[&#x27;corpus_cristi&#x27;]));
-        holidays.push(year + &#x27;-10-12&#x27;);
-        holidays.push(year + &#x27;-11-02&#x27;);
-        holidays.push(year + &#x27;-11-15&#x27;);
-        holidays.push(year + &#x27;-12-25&#x27;);
-
-        this.holidays[year] &#x3D; holidays;
-
-        return holidays;
-    }
-
-    public isHoliday(date: string) {
-        try {
-            const e0 &#x3D; date.split(&#x27;T&#x27;);
-            const dt &#x3D; e0[0];
-            const e &#x3D; dt.split(&#x27;-&#x27;);
-            this.getHolidays(e[0]);
-
-            const i &#x3D; this.holidays[e[0]].indexOf(dt);
-            return (i !&#x3D;&#x3D; -1);
+            const temp &#x3D; this.dateModel.getAmericanDate(newValue);
+            this.propagateChange(temp);
         } catch (e) {
-            console.log(&#x27;isHoliday failure!&#x27;, e);
-            return false;
+            console.log(e);
+            this.setEmptyValue();
         }
     }
 
-    public isUsefullDay(date: string) {
-      if (!this.isValidDate(date)) { return false; }
-      return (!this.isWeekend(date) &amp;&amp; !this.isHoliday(date));
+    constructor() {
+        this.dateValidator &#x3D; new DateFormatValidator();
+        this.dateModel &#x3D; new DateFormatModel();
+        this.minDate &#x3D; &#x27;&#x27;;
+        this.maxDate &#x3D; &#x27;&#x27;;
+        this.placeholder &#x3D; &#x27;&#x27;;
+        this.value &#x3D; &#x27;&#x27;;
+        this.disabled &#x3D; false;
+        this.cssclass &#x3D; &#x27;form-control&#x27;;
     }
 
-    public isValidDate(str: string): boolean {
-        const date &#x3D; this.dateModel.string2date(str);
-        return(date &#x3D;&#x3D;&#x3D; null) ? false : true;
+    ngOnInit() {
+        try {
+            this.touchedChange();
+            if (this.minDate &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
+                this.minDate &#x3D; this.dateModel.getAmericanDate(&#x27;&#x27;);
+            }
+            if (this.maxDate &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
+                this.maxDate &#x3D; this.dateModel.getAmericanDate(&#x27;&#x27;);
+            }
+
+            let obj &#x3D; {
+                minDate: this.minDate,
+                maxDate: this.maxDate,
+                holiday: this.holiday,
+                weekend: this.weekend,
+                usefullDate: this.usefullDate
+            };
+
+            this.validateFn &#x3D; DateFormatValidator.validate(obj);
+        } catch (e) { console.log(e); }
     }
 
-    public isWeekend(date: string) {
-        const weekDay &#x3D; this.getDateByString(date);
-        return (weekDay.getDay() &#x3D;&#x3D;&#x3D; 0 || weekDay.getDay() &#x3D;&#x3D;&#x3D; 6);
+    public isDisabled() {
+        return this.disabled;
     }
 
-    public maxDateCheck(val: string, maxDate: string) {
-        maxDate &#x3D; this.getDateBySpecialString(maxDate);
-        if (maxDate !&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; this.dateModel.diffDate(maxDate, val, DateFormatEnum.DAY) &lt; 0) {
-            return false;
+    public focusEvent(event: any) {
+        this.touchedChange();
+    }
+
+    public keyDownEvent(e: KeyboardEvent) {
+        const value &#x3D; this._date;
+        const num   &#x3D; parseInt(e.key, 10);
+
+        if (isNaN(num)) { return; }
+        if (typeof value &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27; || value &#x3D;&#x3D;&#x3D; &#x27;&#x27; || value[0] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            return (num &lt;&#x3D; 3) ? true : false;
+        }
+
+        if (value[1] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            if (parseInt(value[0], 10) &lt; 3) { return true; }
+            return (num &lt; 2) ? true : false;
+        }
+
+        if (value[3] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            return (num &lt; 2) ? true : false;
+        }
+        if (value[4] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            if (parseInt(value[3], 10) !&#x3D;&#x3D; 0 &amp;&amp; (num &gt; 2)) { return false; }
+
+            const day   &#x3D; parseInt(value[0] + &#x27;&#x27; + value[1], 10);
+            const month &#x3D; parseInt(value[3] + &#x27;&#x27; + num, 10);
+
+            if (month &#x3D;&#x3D;&#x3D; 2) { return day &lt;&#x3D; 29; }
+            if (month &#x3D;&#x3D;&#x3D; 4 || month &#x3D;&#x3D;&#x3D; 6 || month &#x3D;&#x3D;&#x3D; 9 || month &#x3D;&#x3D;&#x3D; 11) {
+                return (day &lt;&#x3D; 30) ? true : false;
+            }
+            return (day &lt;&#x3D; 31) ? true : false;
+        }
+
+        if (value[6] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            const n &#x3D; (num + 1) * 1000 - 1;
+            if (false &#x3D;&#x3D;&#x3D; this.checkTypingMin(n)) {
+                return false;
+            }
+
+            const n2 &#x3D; num * 1000 - 1;
+            if (false &#x3D;&#x3D;&#x3D; this.checkTypingMax(n2)) {
+                return false;
+            }
+        }
+
+        if (value[8] &#x3D;&#x3D;&#x3D; &#x27;_&#x27;) {
+            return true;
         }
         return true;
     }
 
-    public minDateCheck(val: string, minDate: string) {
-        minDate &#x3D; this.getDateBySpecialString(minDate);
+    public keyUpEvent(e: KeyboardEvent) {
+        const value &#x3D; this._date;
+        this.date &#x3D; value;
+    }
 
-        if (minDate &amp;&amp; minDate !&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; this.dateModel.diffDate(val, minDate, DateFormatEnum.DAY) &lt; 0) {
+    private checkTypingMax(n: number) {
+        try {
+            if (this.maxDate !&#x3D;&#x3D; &#x27;&#x27;) {
+                const max &#x3D; this.dateModel.string2date(this.maxDate);
+                if (max instanceof Date) {
+                    if (max.getFullYear() &lt; n) { return false; }
+                }
+            }
+            return true;
+        } catch (e) {
+            console.warn(e);
             return false;
         }
+    }
 
+    private checkTypingMin(n: number) {
+        if (this.minDate !&#x3D;&#x3D; &#x27;&#x27;) {
+            const min &#x3D; this.dateModel.string2date(this.minDate);
+            if (min instanceof Date) {
+                if (min.getFullYear() &gt; n) { return false; }
+            }
+        }
         return true;
     }
 
-    private createHolidayDate(timestamp: number): string {
-        const dt &#x3D; new Date(timestamp);
-        return dt.getFullYear() + &#x27;-&#x27; + (dt.getMonth() + 1) + &#x27;-&#x27; + dt.getDate();
+    private initValue(date: string): string {
+        let temp: any &#x3D; [];
+        try {
+            temp &#x3D; date.split(&#x27;T&#x27;);
+        } catch (e) {
+            console.log(e);
+            temp &#x3D; date;
+        }
+
+        try {
+            return this.dateModel.getBrazilianDate(temp[0]);
+        } catch (e) { console.log(e); }
     }
 
-    private easter_date(Y: number) {
-        const C &#x3D; Math.floor(Y / 100);
-        const N &#x3D; Y - 19 * Math.floor(Y / 19);
-        const K &#x3D; Math.floor((C - 17) / 25);
-        let I &#x3D; C - Math.floor(C / 4) - Math.floor((C - K) / 3) + 19 * N + 15;
-        I &#x3D; I - 30 * Math.floor((I / 30));
-        I &#x3D; I - Math.floor(I / 28) * (1 - Math.floor(I / 28) * Math.floor(29 / (I + 1)) * Math.floor((21 - N) / 11));
-        let J &#x3D; Y + Math.floor(Y / 4) + I + 2 - C + Math.floor(C / 4);
-        J &#x3D; J - 7 * Math.floor(J / 7);
-        const L &#x3D; I - J;
-        const M &#x3D; 3 + Math.floor((L + 40) / 44);
-        const D &#x3D; L + 28 - 31 * Math.floor(M / 4);
-
-        return this.padout(M) + &#x27;.&#x27; + this.padout(D);
+    private setEmptyValue() {
+        this._date &#x3D; &#x27;&#x27;;
+        this.propagateChange(&#x27;&#x27;);
     }
 
-    private padout(n: number) { return (n &lt; 10) ? &#x27;0&#x27; + n : n; }
+    /***********************************************
+     **BEGIN implementation of OnChanges interface**
+     ***********************************************/
+    ngOnChanges(inputs: any) {
+        try {
+            if (inputs[&#x27;minDate&#x27;] &amp;&amp; inputs[&#x27;minDate&#x27;] &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
+                this.minDate &#x3D; this.dateModel.getAmericanDate(&#x27;&#x27;);
+            }
+            if (inputs[&#x27;maxDate&#x27;] &amp;&amp; inputs[&#x27;maxDate&#x27;] &#x3D;&#x3D;&#x3D; &#x27;today&#x27;) {
+                this.maxDate &#x3D; this.dateModel.getAmericanDate(&#x27;&#x27;);
+            }
+            if (inputs[&#x27;minDate&#x27;] || inputs[&#x27;maxDate&#x27;] || inputs[&#x27;holiday&#x27;] || inputs[&#x27;weekend&#x27;] || inputs[&#x27;usefullDate&#x27;]) {
+                let obj &#x3D; {
+                    minDate: inputs[&#x27;minDate&#x27;] ? inputs[&#x27;minDate&#x27;] : this.minDate,
+                    maxDate: inputs[&#x27;maxDate&#x27;] ? inputs[&#x27;maxDate&#x27;] : this.maxDate,
+                    holiday: inputs[&#x27;holiday&#x27;] ? inputs[&#x27;holiday&#x27;] : this.holiday,
+                    weekend: inputs[&#x27;weekend&#x27;] ? inputs[&#x27;weekend&#x27;] : this.weekend,
+                    usefullDate: inputs[&#x27;usefullDate&#x27;] ? inputs[&#x27;usefullDate&#x27;] : this.usefullDate
+                };
+
+                this.validateFn &#x3D; DateFormatValidator.validate(obj);
+            }
+        } catch (e) { console.log(e); }
+    }
+
+
+
+    validate(c: FormControl) {
+        return this.validateFn(c);
+    }
+
+    /**********************************************************
+     **BEGIN implementation of ControlValueAccessor interface**
+     **********************************************************/
+
+     /**
+      * writeValue(obj: any) is the method that writes a new value from the form model
+      * into the view or (if needed) DOM property. This is where we want to update our
+      * counterValue model, as that’s the thing that is used in the view.
+      */
+     writeValue(value: any) {
+        if (value) {
+            try {
+                this.date &#x3D; value;
+            } catch (e) {
+                this.date &#x3D; &#x27;&#x27;;
+            }
+        } else {
+            this.date &#x3D; &#x27;&#x27;;
+        }
+    }
+
+    /**
+     * registerOnChange(fn: any) is a method that registers a handler that should
+     * be called when something in the view has changed. It gets a function
+     * that tells other form directives and form controls to update their values.
+     * In other words, that’s the handler function we want to call whenever
+     * price changes through the view.
+     */
+    registerOnChange(fn: Function) {
+        this.propagateChange &#x3D; fn;
+    }
+
+    /**
+     * registerOnTouched(fn: any) Similiar to registerOnChange(), this registers
+     * a handler specifically for when a control receives a touch event.
+     * We don’t need that in our custom control.
+     */
+    registerOnTouched(fn: Function) {
+        this.touchedChange &#x3D; fn;
+    }
+
+    /**
+     * This function is called when the control status changes to or from &#x27;DISABLED&#x27;.
+     * Depending on the value, it will enable or disable the appropriate DOM element.
+     *
+     * @param isDisabled
+     */
+    setDisabledState(isDisabled: boolean) {
+        this.disabled &#x3D; isDisabled;
+        this.readonly &#x3D; (isDisabled) ? &#x27;1&#x27; : &#x27;&#x27;;
+    }
+    /********************************************************
+     **END implementation of ControlValueAccessor interface**
+     ********************************************************/
 }
 </code></pre>
     </div>

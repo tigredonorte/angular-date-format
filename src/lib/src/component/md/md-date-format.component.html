@@ -1,0 +1,20 @@
+<mat-form-field>
+    <input matInput
+        type='tel'
+        [ngClass]='cssclass'
+        [textMask]='{mask:dateMask}'
+        [placeholder]='placeholder'
+        [readonly]='readonly'
+        [name]='inputname'
+        [formControl]='control'
+        [value]='displayFn(_date)'
+
+        [min]="minDate"
+        [max]="maxDate"
+
+        (focus)='focusEvent($event)'
+        (keyup)='keyUpEvent($event)'
+        (keydown)='keyDownEvent($event)'
+    />
+    <mat-error>{{error}}</mat-error>
+</mat-form-field>
