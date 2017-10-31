@@ -151,6 +151,7 @@ export class DateFormatValidator {
 
     public isWeekend(date: string) {
         const weekDay = this.getDateByString(date);
+        if (weekDay === null) { return false; }
         return (weekDay.getDay() === 0 || weekDay.getDay() === 6);
     }
 

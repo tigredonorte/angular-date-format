@@ -109,13 +109,13 @@
                                     <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/DateFormatComponent.html"  data-type="entity-link" class="active" >DateFormatComponent</a>
+                                    <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/MdDateFormatComponent.html" >MdDateFormatComponent</a>
+                                    <a href="../components/MdDateFormatComponent.html"  data-type="entity-link" class="active" >MdDateFormatComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/MdDateFormatComponent.html" >MdDateFormatComponent</a>
@@ -290,13 +290,13 @@
                                            <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/DateFormatComponent.html"  data-type="entity-link" class="active" >DateFormatComponent</a>
+                                           <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/DateFormatComponent.html" >DateFormatComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/MdDateFormatComponent.html" >MdDateFormatComponent</a>
+                                           <a href="../components/MdDateFormatComponent.html"  data-type="entity-link" class="active" >MdDateFormatComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/MdDateFormatComponent.html" >MdDateFormatComponent</a>
@@ -384,7 +384,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>DateFormatComponent</li>
+  <li>MdDateFormatComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -397,6 +397,9 @@
     </li>
 
     <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
         <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
     </li>
 </ul>
@@ -406,7 +409,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>out-tsc/lib/src/component/date-format.component.ts</code>
+    <code>src/lib/src/component/md/md-date-format.component.ts</code>
 </p>
 
 
@@ -417,6 +420,12 @@
             <code><a href="../classes/BaseDateFormatComponent.html" target="_self" >BaseDateFormatComponent</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -446,51 +455,228 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>date-format</code></td>
+                <td class="col-md-9"><code>md-date-format</code></td>
             </tr>
+
 
 
 
             <tr>
-                <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&#x27;input-group date&#x27;&gt; &lt;input type&#x3D;&#x27;tel&#x27; [ngClass]&#x3D;&#x27;cssclass&#x27; [textMask]&#x3D;&#x27;{mask:dateMask}&#x27; [placeholder]&#x3D;&#x27;placeholder&#x27; [readonly]&#x3D;&#x27;readonly&#x27; [name]&#x3D;&#x27;inputname&#x27; [(ngModel)]&#x3D;&#x27;_date&#x27; (focus)&#x3D;&#x27;focusEvent($event)&#x27; (keyup)&#x3D;&#x27;keyUpEvent($event)&#x27; (keydown)&#x3D;&#x27;keyDownEvent($event)&#x27; [disabled]&#x3D;&#x27;isDisabled()&#x27; ngDefaultControl /&gt; &lt;/div&gt;</code></pre></td>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./md-date-format.component.html</code></td>
             </tr>
-
 
 
         </tbody>
     </table>
 </section>
 
+    <section>
+        <h3 id="index">Index</h3>
+        <table class="table table-sm table-bordered index-table">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#locale">locale</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(dateAdapter: DateAdapter<NativeDateAdapter>)</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/src/component/md/md-date-format.component.ts:18</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>dateAdapter</td>
+                                                      <td>
+                                                                <code>DateAdapter&lt;NativeDateAdapter&gt;</code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="locale"></a>
+                            <code>locale</code>
+                        </td>
+                        <td class="col-md-10">
+                            <p>
+                              <em>Default value: </em><code>pt-BR</code>
+                            </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/src/component/md/md-date-format.component.ts:18</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
 
 
 
 
-
-
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnInit"></a>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/src/component/md/md-date-format.component.ts:24</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
 </div>
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, forwardRef } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, Input, forwardRef, OnInit } from &#x27;@angular/core&#x27;;
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from &#x27;@angular/forms&#x27;;
+import { DateAdapter, NativeDateAdapter } from &#x27;@angular/material&#x27;;
 
 /* Own modules */
-import { BaseDateFormatComponent } from &#x27;./base-date-format.component&#x27;;
+import { BaseDateFormatComponent } from &#x27;../base-date-format.component&#x27;;
 
 @Component({
-    selector: &#x27;date-format&#x27;,
-    template: &quot;&lt;div class&#x3D;&#x27;input-group date&#x27;&gt; &lt;input type&#x3D;&#x27;tel&#x27; [ngClass]&#x3D;&#x27;cssclass&#x27; [textMask]&#x3D;&#x27;{mask:dateMask}&#x27; [placeholder]&#x3D;&#x27;placeholder&#x27; [readonly]&#x3D;&#x27;readonly&#x27; [name]&#x3D;&#x27;inputname&#x27; [(ngModel)]&#x3D;&#x27;_date&#x27; (focus)&#x3D;&#x27;focusEvent($event)&#x27; (keyup)&#x3D;&#x27;keyUpEvent($event)&#x27; (keydown)&#x3D;&#x27;keyDownEvent($event)&#x27; [disabled]&#x3D;&#x27;isDisabled()&#x27; ngDefaultControl /&gt; &lt;/div&gt; &quot;,
+    selector: &#x27;md-date-format&#x27;,
+    templateUrl: &#x27;./md-date-format.component.html&#x27;,
     providers: [
-        { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; DateFormatComponent), multi: true },
-        { provide: NG_VALIDATORS, useExisting: forwardRef(() &#x3D;&gt; DateFormatComponent), multi: true }
+        { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; MdDateFormatComponent), multi: true },
+        { provide: NG_VALIDATORS, useExisting: forwardRef(() &#x3D;&gt; MdDateFormatComponent), multi: true }
     ]
 })
-export class DateFormatComponent extends BaseDateFormatComponent {}
+export class MdDateFormatComponent extends BaseDateFormatComponent implements OnInit {
+  @Input() locale &#x3D; &#x27;pt-BR&#x27;;
+
+  constructor(private dateAdapter: DateAdapter&lt;NativeDateAdapter&gt;) {
+    super();
+  }
+
+  ngOnInit() {
+    super.ngOnInit();
+
+    this.dateAdapter.setLocale(this.locale);
+  }
+}
 </code></pre>
     </div>
 
+    <div class="tab-pane fade" id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;md-form-field&gt;
+    &lt;input mdInput
+        type&#x3D;&#x27;tel&#x27;
+        [ngClass]&#x3D;&#x27;cssclass&#x27;
+        [textMask]&#x3D;&#x27;{mask:dateMask}&#x27;
+        [placeholder]&#x3D;&#x27;placeholder&#x27;
+        [readonly]&#x3D;&#x27;readonly&#x27;
+        [name]&#x3D;&#x27;inputname&#x27;
+        [(ngModel)]&#x3D;&#x27;_date&#x27;
+
+        [min]&#x3D;&quot;minDate&quot;
+        [max]&#x3D;&quot;maxDate&quot;
+
+        (focus)&#x3D;&#x27;focusEvent($event)&#x27;
+        (keyup)&#x3D;&#x27;keyUpEvent($event)&#x27;
+        (keydown)&#x3D;&#x27;keyDownEvent($event)&#x27;
+        [disabled]&#x3D;&#x27;isDisabled()&#x27;
+    /&gt;
+&lt;/md-form-field&gt;
+</code></pre>
+    </div>
 
     <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
@@ -515,10 +701,10 @@ export class DateFormatComponent extends BaseDateFormatComponent {}
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class=\'input-group date\'> <input type=\'tel\' [ngClass]=\'cssclass\' [textMask]=\'{mask:dateMask}\' [placeholder]=\'placeholder\' [readonly]=\'readonly\' [name]=\'inputname\' [(ngModel)]=\'_date\' (focus)=\'focusEvent($event)\' (keyup)=\'keyUpEvent($event)\' (keydown)=\'keyDownEvent($event)\' [disabled]=\'isDisabled()\' ngDefaultControl /> </div></div>'
+        var COMPONENT_TEMPLATE = '<div><md-form-field>    <input mdInput        type=\'tel\'        [ngClass]=\'cssclass\'        [textMask]=\'{mask:dateMask}\'        [placeholder]=\'placeholder\'        [readonly]=\'readonly\'        [name]=\'inputname\'        [(ngModel)]=\'_date\'        [min]="minDate"        [max]="maxDate"        (focus)=\'focusEvent($event)\'        (keyup)=\'keyUpEvent($event)\'        (keydown)=\'keyDownEvent($event)\'        [disabled]=\'isDisabled()\'    /></md-form-field></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'demo-app'},{'name': 'DateFormatComponent', 'selector': 'date-format'},{'name': 'DateFormatComponent', 'selector': 'date-format'},{'name': 'MdDateFormatComponent', 'selector': 'md-date-format'},{'name': 'MdDateFormatComponent', 'selector': 'md-date-format'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'DateFormatComponent'};
+    var ACTUAL_COMPONENT = {'name': 'MdDateFormatComponent'};
 </script>
 <script src="../js/tree.js"></script>
 

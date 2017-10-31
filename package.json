@@ -1,6 +1,6 @@
 {
   "name": "angular-date-format",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "./bundles/angular-date-format.umd.js",
   "module": "./angular-date-format.es5.js",
@@ -59,12 +59,12 @@
     "@angular/compiler-cli": "~4.1.3",
     "@angular/core": "~4.1.3",
     "@angular/forms": "~4.1.3",
+    "@angular/http": "^4.4.3",
     "@angular/platform-browser": "~4.1.3",
     "@angular/platform-browser-dynamic": "~4.1.3",
     "@compodoc/compodoc": "^1.0.0-beta.10",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-    "angular2-text-mask": "^1.0.1",
     "codelyzer": "~2.0.0",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
@@ -109,7 +109,8 @@
   "dependencies": {
     "@angular/animations": "^4.4.3",
     "@angular/cdk": "^2.0.0-beta.11",
-    "@angular/material": "^2.0.0-beta.11"
+    "@angular/material": "^2.0.0-beta.11",
+    "angular2-text-mask": "^8.0.4"
   },
   "size-limit": [
     {

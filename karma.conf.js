@@ -29,7 +29,14 @@ module.exports = function(config) {
 
         autoWatch: false,
 
-        browsers: ['Firefox'],
+        browsers: ['Chrome','Chromium','Firefox'],
+        
+        customLaunchers: {
+          ChromeNoSandbox: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+          }
+        },
 
         singleRun: true,
 
