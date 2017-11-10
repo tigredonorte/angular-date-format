@@ -39,15 +39,17 @@ export class DateFormatModule {
   }
 }
 
+const MaterialImports = [
+  ...CommonImports,
+  ReactiveFormsModule,
+  BrowserAnimationsModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+];
+
 @NgModule({
-  imports: [
-    ...CommonImports,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule
-  ],
+  imports: MaterialImports,
   declarations: [MatDateFormatComponent],
   exports: [MatDateFormatComponent],
   providers: CommonProviders

@@ -34,8 +34,8 @@ export class DateFormatValidator {
                     options.maxDate = model.getAmericanDate('');
                 }
 
-                let date = c.value;
-                let userDate = model.getBrazilianDate(date);
+                let userDate = c.value;
+                let date = model.getAmericanDate(userDate);
                 if (false === validator.isValidDate(date)) {
                     return {invalidDateError: {given: userDate}};
                 }

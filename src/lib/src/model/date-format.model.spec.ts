@@ -11,7 +11,7 @@ describe('DateFormatModel', () => {
 
     describe('gets brazilian date from', () => {
         it('non-brazilian date', () => {
-            const expectedBrDate = '1900/01/02T00:00:00-02:00';
+            const expectedBrDate = '1900/01/02';
             const nonBrDate = '02-01-1900T00:00:00-02:00';
             const brDate = model.getBrazilianDate(nonBrDate);
 
@@ -19,7 +19,7 @@ describe('DateFormatModel', () => {
         });
 
         it('brazilian date', () => {
-            const expectedBrDate = '1900/01/02T00:00:00-02:00';
+            const expectedBrDate = '1900/01/02';
             let brDate = '02-01-1900T00:00:00-02:00';
 
             brDate = model.getBrazilianDate(brDate);
@@ -28,7 +28,7 @@ describe('DateFormatModel', () => {
         });
 
         it('UTC non-brazilian date', () => {
-            const expectedBrDate = '1900/01/02T00:00:00-02:00';
+            const expectedBrDate = '1900/01/02';
             const nonBrDateUTC = '02-01-1900';
             const brDate = model.getBrazilianDate(nonBrDateUTC);
 
@@ -36,10 +36,17 @@ describe('DateFormatModel', () => {
         });
 
         it('UTC brazilian date', () => {
-            const expectedBrDate = '1900/01/02T00:00:00-02:00';
+            const expectedBrDate = '1900/01/02';
             const brDateUTC = '02-01-1900';
             const brDate = model.getBrazilianDate(brDateUTC);
 
+            expect(brDate).toEqual(expectedBrDate);
+        });
+
+        it('locale brazilian date', () => {
+            const expectedBrDate = '1900/01/02';
+            const localeBrDate = '02/01/1900';
+            const brDate = model.getBrazilianDate(localeBrDate);
 
             expect(brDate).toEqual(expectedBrDate);
         });
