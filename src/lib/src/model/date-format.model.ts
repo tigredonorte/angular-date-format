@@ -86,7 +86,7 @@ export class DateFormatModel {
             const dateType = this.detectDateType(e[0]);
             const mustReverseDateType = [ 'br', 'db-reversed' ];
             const d = mustReverseDateType.indexOf(dateType) === -1 ? e[0] : this.reverseDate(e[0]);
-            return dateType.indexOf('db') !== -1 ? d : d.split('-').join('/');
+            return dateType.indexOf('db') === -1 ? d : d.split('-').join('/');
         } catch (e) {
             console.log(e);
             return null;
@@ -166,9 +166,9 @@ export class DateFormatModel {
             }
 
             str = this.getBrazilianDate(str);
-            const dd   = parseInt(str.substr(0, 2), 10);
-            const mm   = parseInt(str.substr(3, 2), 10);
-            const yy   = parseInt(str.substr(6, 4), 10);
+            const yy   = parseInt(str.substr(0, 4), 10);
+            const mm   = parseInt(str.substr(5, 2), 10);
+            const dd   = parseInt(str.substr(8, 2), 10);
             const date = new Date(yy, mm - 1, dd);
 
             if (dd !== date.getDate()) { return null; }
