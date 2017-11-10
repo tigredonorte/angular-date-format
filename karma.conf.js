@@ -29,7 +29,7 @@ module.exports = function(config) {
 
         autoWatch: false,
 
-        browsers: ['Chrome','Chromium','Firefox'],
+        browsers: ['Chrome'],
         
         customLaunchers: {
           ChromeNoSandbox: {
@@ -37,8 +37,6 @@ module.exports = function(config) {
             flags: ['--no-sandbox']
           }
         },
-
-        singleRun: true,
 
         concurrency: Infinity,
 

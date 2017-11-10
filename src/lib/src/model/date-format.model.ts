@@ -83,7 +83,10 @@ export class DateFormatModel {
     public getBrazilianDate(date: string, utc?: boolean) {
         try {
             const e = date.toString().split('T');
-            return this.detectDateType(e[0]) === 'br' ? e[0] : this.reverseDate(e[0]);
+            const dateType = this.detectDateType(e[0]);
+            const mustReverseDateType = [ 'br', 'db-reversed' ];
+            const d = mustReverseDateType.indexOf(dateType) === -1 ? e[0] : this.reverseDate(e[0]);
+            return dateType.indexOf('db') !== -1 ? d : d.split('-').join('/');
         } catch (e) {
             console.log(e);
             return null;
@@ -197,8 +200,13 @@ export class DateFormatModel {
 
     private detectDateType(date: string) {
         try {
-            if (date.indexOf('/') !== -1) {return 'br'; }
-            if (date.indexOf('-') !== -1) {return 'db'; }
+            let separatorIndex = -1;
+            if ((separatorIndex = date.indexOf('/')) !== -1) {
+              return (separatorIndex !== 4) ? 'br' : 'br-reversed';
+            }
+            if ((separatorIndex = date.indexOf('-')) !== -1) {
+              return (separatorIndex === 4) ? 'db' : 'db-reversed';
+            }
             return 'none';
         } catch (e) { console.log(e); }
     }

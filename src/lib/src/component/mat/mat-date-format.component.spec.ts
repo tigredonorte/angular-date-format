@@ -9,7 +9,7 @@ import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 import { MaskedInputDirective } from 'angular2-text-mask';
 
 /* Own modules */
-import { MatDateFormatComponent } from './md-date-format.component';
+import { MatDateFormatComponent } from './mat-date-format.component';
 import { DateFormatModel } from '../../model/date-format.model';
 import { DateFormatModelMock } from '../../mock/date-format.model.mock';
 import { DateFormatValidator } from '../../validator/date-format.validator';

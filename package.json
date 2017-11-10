@@ -43,7 +43,6 @@
     "start": "concurrently \"npm run build-demo:watch\" \"npm run serve\"",
     "test": "karma start karma.conf.js",
     "coverage": "karma start karma.conf.js --single-run",
-    "pretest:once": "npm run build-test",
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "release": "standard-version",
