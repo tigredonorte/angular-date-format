@@ -57,5 +57,9 @@ module.exports = function(config) {
             splitResults: true,
             useHostedBootstrap: true
         }
-    })
+    });
+    
+    if (process.env.TRAVIS) {
+      config.browsers = ['ChromeNoSandbox']
+    }
 }
