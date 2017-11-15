@@ -5,15 +5,7 @@ node_js:
 install:
   - "npm install -g @angular/cli"
   - npm install
+  - "npm install @angular/core@4 @angular/forms@4"
 script:
   - npm run build
   - npm run test:once
-  - npm run docs
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  target_branch: master
-  local_dir: docs
-  on:
-    branch: master
