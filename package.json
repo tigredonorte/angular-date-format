@@ -46,7 +46,7 @@
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "release": "standard-version",
-    "doc": "compodoc -p tsconfig.doc.json -d docs -s",
+    "docs": "compodoc -p tsconfig.doc.json -d docs",
     "size": "size-limit"
   },
   "peerDependencies": {
