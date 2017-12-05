@@ -1,7 +1,7 @@
 /* Angular modules */
 import { CommonModule } from '@angular/common';
 import { forwardRef } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 
@@ -19,7 +19,7 @@ describe('DateFormatComponent', () => {
     let comp:    DateFormatComponent;
     let fixture: ComponentFixture<DateFormatComponent>;
 
-    beforeEach(() => {
+    beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports:      [ CommonModule, FormsModule ],
             declarations: [ DateFormatComponent, MaskedInputDirective ],
@@ -29,12 +29,14 @@ describe('DateFormatComponent', () => {
                 { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => DateFormatComponent), multi: true },
                 { provide: NG_VALIDATORS, useExisting: forwardRef(() => DateFormatComponent), multi: true }
             ]
-        });
+        }).compileComponents();
+    }));
 
-        fixture = TestBed.createComponent(DateFormatComponent);
-        comp = fixture.componentInstance;
-        comp.minDate = '01-01-2016';
-        comp.maxDate = '01-01-2017';
+    beforeEach(() => {
+      fixture = TestBed.createComponent(DateFormatComponent);
+      comp = fixture.componentInstance;
+      comp.minDate = '01-01-2016';
+      comp.maxDate = '01-01-2017';
     });
 
     it('should create component', () => expect(comp).toBeDefined() );
