@@ -63,12 +63,18 @@ export class DateFormatModel {
                 let dt = new Date();
                 return this.date2string(dt, utc);
             }
-            const e   = date.toString().split('T');
-            const out = (!utc)
-                ? this.detectDateType(e[0]) === 'db'
-                    ? e[0] : this.reverseDate(e[0])
-                : this.detectDateType(e[0]) === 'db'
-                    ? this.date2UTC(e[0]) : this.date2UTC(this.reverseDate(e[0]));
+            const e = date.toString().split('T');
+            let dateType = this.detectDateType(e[0]);
+            let out = (!utc)
+                ? dateType.indexOf('db') !== -1
+                    ? dateType === 'db' ? e[0] : this.reverseDate(e[0])
+                    : dateType === 'br' ? this.reverseDate(e[0]) : e[0]
+                : dateType.indexOf('db') !== -1
+                    ? this.date2UTC(dateType === 'db' ? e[0] : this.reverseDate(e[0]))
+                    : this.date2UTC(dateType === 'br' ? this.reverseDate(e[0]) : e[0]);
+            if (dateType.indexOf('db') === -1) {
+              out = out.split('/').join('-');
+            }
             const temp = out.split('-');
             const mm = (parseInt(temp[1], 10) < 10) ? '0' + parseInt(temp[1], 10) : temp[1];
             const dd = (parseInt(temp[2], 10) < 10) ? '0' + parseInt(temp[2], 10) : temp[2];
@@ -182,19 +188,37 @@ export class DateFormatModel {
         }
     }
 
-    public subDate(date?: string, subType?: DateFormatEnum, amonth?: number, utc?: boolean) {
+    public subDate(date?: string, subType?: DateFormatEnum, amount?: number, utc?: boolean) {
         try {
             if (!date) { date = ''; }
-            if (!subType) {subType = DateFormatEnum.DAY; }
-            if (!amonth) {amonth  = 1; }
+            if (!subType) { subType = DateFormatEnum.DAY; }
+            if (!amount) { amount = 1; }
 
             const d = new Date(this.getAmericanDate(date));
-            if (subType === DateFormatEnum.MONTH) { d.setMonth(d.getMonth() - amonth); }
-            if (subType === DateFormatEnum.YEAR) { d.setFullYear(d.getFullYear() - amonth); }
+            if (subType === DateFormatEnum.MONTH) {
+              if (utc) {
+                d.setUTCMonth(d.getUTCMonth() - amount);
+              } else {
+                d.setMonth(d.getMonth() - amount);
+              }
+            }
+            if (subType === DateFormatEnum.YEAR) {
+              if (utc) {
+                d.setUTCFullYear(d.getUTCFullYear() - amount);
+              } else {
+                d.setFullYear(d.getFullYear() - amount);
+              }
+            }
 
-            if (subType === DateFormatEnum.DAY)  { d.setDate(d.getDate() - amonth + 2); }
+            if (subType === DateFormatEnum.DAY)  {
+              if (utc) {
+                d.setUTCDate(d.getUTCDate() - amount);
+              } else {
+                d.setDate(d.getDate() - amount);
+              }
+            }
 
-            return this.date2string(d, utc);
+            return this.date2string(d, utc, date.indexOf('T') !== -1);
         } catch (e) { console.log(e); }
     }
 
