@@ -34,7 +34,7 @@ export class DateFormatModel {
         try {
             const d1   = new Date(this.getAmericanDate(date1));
             const d2   = new Date(this.getAmericanDate(date2));
-            const diff = (d1.getTime() - d2.getTime()) / 1000;
+            const diff = (d1.getTime() - d2.getTime());
 
             let year;
             switch ($type) {
@@ -42,12 +42,11 @@ export class DateFormatModel {
                     year = new Date(d1.getTime() - d2.getTime());
                     return year.getUTCFullYear() - 1970;
                 case DateFormatEnum.MONTH:
-                    year = new Date(d1.getTime() - d2.getTime());
-                    const signal = (diff < 0) ? -1 : 1;
-                    return signal * year.getUTCMonth();
-                case DateFormatEnum.DAY:  return diff / (60 * 60 * 24);
-                case DateFormatEnum.HOUR:  return diff / (60 * 60);
-                case DateFormatEnum.MINUTE: return diff / 60;
+                    return Math.abs(d1.getUTCMonth() - d2.getUTCMonth()) +
+                      Math.abs((d1.getUTCFullYear() - d2.getUTCFullYear()) * 12);
+                case DateFormatEnum.DAY:  return diff / (1000 * 60 * 60 * 24);
+                case DateFormatEnum.HOUR:  return diff / (1000 * 60 * 60);
+                case DateFormatEnum.MINUTE: return diff / (1000 * 60);
             }
 
             return diff;
@@ -57,7 +56,7 @@ export class DateFormatModel {
         }
     }
 
-    public getAmericanDate(date: string, utc?: boolean): string {
+    public getAmericanDate(date: string, withTime?: boolean, utc?: boolean): string {
         try {
             if (date === '') {
                 let dt = new Date();
@@ -79,6 +78,9 @@ export class DateFormatModel {
             const mm = (parseInt(temp[1], 10) < 10) ? '0' + parseInt(temp[1], 10) : temp[1];
             const dd = (parseInt(temp[2], 10) < 10) ? '0' + parseInt(temp[2], 10) : temp[2];
 
+            if (e[1] && withTime) {
+              return temp[0] + '-' + mm + '-' + dd + 'T' + e[1];
+            }
             return temp[0] + '-' + mm + '-' + dd;
         } catch (e) {
             console.log(e);
@@ -295,7 +297,7 @@ export class DateFormatModel {
         const dateReverseSeparator = !data[0].match(/\//ig) ? '-' : '/';
         const array = data[0].split(dateReverseSeparator).reverse();
 
-        const join = !data[0].match(/\//ig) ? '/' : '-';
+        const join = data[0].match(/\//ig) ? '/' : '-';
         data[0] = array.join(join);
 
         return data.join(' ');
