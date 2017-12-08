@@ -50,11 +50,12 @@
     "size": "size-limit"
   },
   "peerDependencies": {
-    "@angular/common": ">=2 <5",
-    "@angular/core": ">=2 <5",
-    "@angular/forms": ">=2 <5",
-    "@angular/platform-browser": ">=2 <5",
-    "@angular/platform-browser-dynamic": ">=2 <5"
+    "@angular/common": ">=4 <5",
+    "@angular/core": ">=4 <5",
+    "@angular/forms": ">=4 <5",
+    "@angular/http": ">=4 <5",
+    "@angular/platform-browser": ">=4 <5",
+    "@angular/platform-browser-dynamic": ">=4 <5"
   },
   "devDependencies": {
     "@angular/compiler": ">=2 <5",
