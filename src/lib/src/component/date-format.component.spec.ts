@@ -15,7 +15,7 @@ import { DateFormatModelMock } from '../mock/date-format.model.mock';
 import { DateFormatValidator } from '../validator/date-format.validator';
 import { DateFormatValidatorMock } from '../mock/date-format.validator.mock';
 
-describe('DateFormatComponent', () => {
+xdescribe('DateFormatComponent', () => {
     let comp:    DateFormatComponent;
     let fixture: ComponentFixture<DateFormatComponent>;
 
