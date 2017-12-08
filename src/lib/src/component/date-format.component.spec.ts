@@ -21,7 +21,7 @@ describe('DateFormatComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports:      [ CommonModule, FormsModule ],
+            imports: [ CommonModule, FormsModule ],
             declarations: [ DateFormatComponent, MaskedInputDirective ],
             providers: [
                 { provide: DateFormatModel, useClass: DateFormatModelMock },

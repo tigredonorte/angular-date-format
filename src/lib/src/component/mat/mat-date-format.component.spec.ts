@@ -2,8 +2,14 @@
 import { CommonModule } from '@angular/common';
 import { forwardRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
 
 /* Third-party modules */
 import { MaskedInputDirective } from 'angular2-text-mask';
@@ -21,7 +27,15 @@ describe('MatDateFormatComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports:      [ CommonModule, FormsModule ],
+            imports: [
+              CommonModule,
+              FormsModule,
+              ReactiveFormsModule,
+              BrowserAnimationsModule,
+              MatInputModule,
+              MatDatepickerModule,
+              MatNativeDateModule
+            ],
             declarations: [ MatDateFormatComponent, MaskedInputDirective ],
             providers: [
                 { provide: DateFormatModel, useClass: DateFormatModelMock },
