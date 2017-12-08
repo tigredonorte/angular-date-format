@@ -16,8 +16,9 @@ before_install:
 
 install:
   - "npm install -g @angular/cli"
+  - "npm install @angular/common@${NG_VERSION} @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION} @angular/platform-browser@${NG_VERSION} @angular/platform-browser-dynamic@${NG_VERSION}"
+  - "npm install @angular/compiler@${NG_VERSION} @angular/compiler-cli@${NG_VERSION}"
   - npm install
-  - "npm install @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION}"
 
 script:
   - npm run build
