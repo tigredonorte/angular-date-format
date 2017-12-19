@@ -8,7 +8,8 @@ module.exports = function(config) {
 
         files: [
             { pattern: './base.spec.ts' },
-            { pattern: libBase + '**/*[^.d$].ts' }
+            { pattern: libBase + '**/*[^.d$].ts' },
+            { pattern: libBase + '**/*.html' }
         ],
 
         exclude: [
@@ -57,5 +58,9 @@ module.exports = function(config) {
             splitResults: true,
             useHostedBootstrap: true
         }
-    })
+    });
+    
+    if (process.env.TRAVIS) {
+      config.browsers = ['ChromeNoSandbox']
+    }
 }

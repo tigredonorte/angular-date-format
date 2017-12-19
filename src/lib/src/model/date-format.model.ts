@@ -34,7 +34,7 @@ export class DateFormatModel {
         try {
             const d1   = new Date(this.getAmericanDate(date1));
             const d2   = new Date(this.getAmericanDate(date2));
-            const diff = (d1.getTime() - d2.getTime()) / 1000;
+            const diff = (d1.getTime() - d2.getTime());
 
             let year;
             switch ($type) {
@@ -42,12 +42,11 @@ export class DateFormatModel {
                     year = new Date(d1.getTime() - d2.getTime());
                     return year.getUTCFullYear() - 1970;
                 case DateFormatEnum.MONTH:
-                    year = new Date(d1.getTime() - d2.getTime());
-                    const signal = (diff < 0) ? -1 : 1;
-                    return signal * year.getUTCMonth();
-                case DateFormatEnum.DAY:  return diff / (60 * 60 * 24);
-                case DateFormatEnum.HOUR:  return diff / (60 * 60);
-                case DateFormatEnum.MINUTE: return diff / 60;
+                    return Math.abs(d1.getUTCMonth() - d2.getUTCMonth()) +
+                      Math.abs((d1.getUTCFullYear() - d2.getUTCFullYear()) * 12);
+                case DateFormatEnum.DAY:  return diff / (1000 * 60 * 60 * 24);
+                case DateFormatEnum.HOUR:  return diff / (1000 * 60 * 60);
+                case DateFormatEnum.MINUTE: return diff / (1000 * 60);
             }
 
             return diff;
@@ -57,22 +56,31 @@ export class DateFormatModel {
         }
     }
 
-    public getAmericanDate(date: string, utc?: boolean): string {
+    public getAmericanDate(date: string, withTime?: boolean, utc?: boolean): string {
         try {
             if (date === '') {
                 let dt = new Date();
                 return this.date2string(dt, utc);
             }
-            const e   = date.toString().split('T');
-            const out = (!utc)
-                ? this.detectDateType(e[0]) === 'db'
-                    ? e[0] : this.reverseDate(e[0])
-                : this.detectDateType(e[0]) === 'db'
-                    ? this.date2UTC(e[0]) : this.date2UTC(this.reverseDate(e[0]));
+            const e = date.toString().split('T');
+            let dateType = this.detectDateType(e[0]);
+            let out = (!utc)
+                ? dateType.indexOf('db') !== -1
+                    ? dateType === 'db' ? e[0] : this.reverseDate(e[0])
+                    : dateType === 'br' ? this.reverseDate(e[0]) : e[0]
+                : dateType.indexOf('db') !== -1
+                    ? this.date2UTC(dateType === 'db' ? e[0] : this.reverseDate(e[0]))
+                    : this.date2UTC(dateType === 'br' ? this.reverseDate(e[0]) : e[0]);
+            if (dateType.indexOf('db') === -1) {
+              out = out.split('/').join('-');
+            }
             const temp = out.split('-');
             const mm = (parseInt(temp[1], 10) < 10) ? '0' + parseInt(temp[1], 10) : temp[1];
             const dd = (parseInt(temp[2], 10) < 10) ? '0' + parseInt(temp[2], 10) : temp[2];
 
+            if (e[1] && withTime) {
+              return temp[0] + '-' + mm + '-' + dd + 'T' + e[1];
+            }
             return temp[0] + '-' + mm + '-' + dd;
         } catch (e) {
             console.log(e);
@@ -182,19 +190,37 @@ export class DateFormatModel {
         }
     }
 
-    public subDate(date?: string, subType?: DateFormatEnum, amonth?: number, utc?: boolean) {
+    public subDate(date?: string, subType?: DateFormatEnum, amount?: number, utc?: boolean) {
         try {
             if (!date) { date = ''; }
-            if (!subType) {subType = DateFormatEnum.DAY; }
-            if (!amonth) {amonth  = 1; }
+            if (!subType) { subType = DateFormatEnum.DAY; }
+            if (!amount) { amount = 1; }
 
             const d = new Date(this.getAmericanDate(date));
-            if (subType === DateFormatEnum.MONTH) { d.setMonth(d.getMonth() - amonth); }
-            if (subType === DateFormatEnum.YEAR) { d.setFullYear(d.getFullYear() - amonth); }
+            if (subType === DateFormatEnum.MONTH) {
+              if (utc) {
+                d.setUTCMonth(d.getUTCMonth() - amount);
+              } else {
+                d.setMonth(d.getMonth() - amount);
+              }
+            }
+            if (subType === DateFormatEnum.YEAR) {
+              if (utc) {
+                d.setUTCFullYear(d.getUTCFullYear() - amount);
+              } else {
+                d.setFullYear(d.getFullYear() - amount);
+              }
+            }
 
-            if (subType === DateFormatEnum.DAY)  { d.setDate(d.getDate() - amonth + 2); }
+            if (subType === DateFormatEnum.DAY)  {
+              if (utc) {
+                d.setUTCDate(d.getUTCDate() - amount);
+              } else {
+                d.setDate(d.getDate() - amount);
+              }
+            }
 
-            return this.date2string(d, utc);
+            return this.date2string(d, utc, date.indexOf('T') !== -1);
         } catch (e) { console.log(e); }
     }
 
@@ -271,7 +297,7 @@ export class DateFormatModel {
         const dateReverseSeparator = !data[0].match(/\//ig) ? '-' : '/';
         const array = data[0].split(dateReverseSeparator).reverse();
 
-        const join = !data[0].match(/\//ig) ? '/' : '-';
+        const join = data[0].match(/\//ig) ? '/' : '-';
         data[0] = array.join(join);
 
         return data.join(' ');

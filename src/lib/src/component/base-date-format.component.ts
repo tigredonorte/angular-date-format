@@ -37,7 +37,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     }
     set date(newValue) {
         try {
-            if (!newValue || newValue === '' || newValue == null) {
+            if (!newValue || newValue.trim() === '') {
                 this.setEmptyValue();
                 return;
             }
