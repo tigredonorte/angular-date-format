@@ -5,8 +5,8 @@ node_js:
   - "6"
 
 env:
-  - NG_VERSION=4
-  - NG_VERSION=5
+  - NG_VERSION=4 TS_VERSION=2.3.4
+  - NG_VERSION=5 TS_VERSION=2.4.2
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -15,9 +15,11 @@ before_install:
 
 install:
   - "npm install -g @angular/cli"
-  - "npm install @angular/common@${NG_VERSION} @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION} @angular/http@${NG_VERSION} @angular/platform-browser@${NG_VERSION} @angular/platform-browser-dynamic@${NG_VERSION}"
+  - "npm install @angular/common@${NG_VERSION} @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION}"
+  - "npm install @angular/http@${NG_VERSION} @angular/platform-browser@${NG_VERSION} @angular/platform-browser-dynamic@${NG_VERSION}"
   - "npm install @angular/compiler@${NG_VERSION} @angular/compiler-cli@${NG_VERSION}"
-  - npm install
+  - "npm install typescript@${TS_VERSION}"
+  - "npm install"
 
 script:
   - npm run build

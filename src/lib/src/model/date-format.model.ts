@@ -117,7 +117,7 @@ export class DateFormatModel {
     }
 
     /**
-     * @function getLastUsefullDate: Find last usefull date of date
+     * Find last usefull date of date
      * @param date: string date to find usefull date
      * @param utc: boolean convert to utc
      * @returns string last usefull date
@@ -127,7 +127,7 @@ export class DateFormatModel {
     }
 
     /**
-     * @function getMonthLastDate: return last date of month
+     * return last date of month
      * @param date: string
      * @param utc: boolean convert to utc
      * @param usefullDate: boolean if set true, this function will return last month usefull date
@@ -148,7 +148,7 @@ export class DateFormatModel {
     }
 
     /**
-     * @function getNextUsefullDate: Find next usefull date of date
+     * Find next usefull date of date
      * @param date: string date to find usefull date
      * @param utc: boolean convert to utc
      * @returns string next usefull date
