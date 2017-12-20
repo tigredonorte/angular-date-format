@@ -22,6 +22,15 @@ const tempLibFolder = path.join(compilationFolder, 'lib');
 const es5OutputFolder = path.join(compilationFolder, 'lib-es5');
 const es2015OutputFolder = path.join(compilationFolder, 'lib-es2015');
 
+const ngcpjson = require('@angular/compiler-cli/package.json');
+const ngcversion = ngcpjson.version.split('.')[0];
+const es6NgcPrj = ngcversion == 5
+&& ['-p', `${tempLibFolder}/tsconfig.lib.json`]
+|| { project: `${tempLibFolder}/tsconfig.lib.json` };
+const es5NgcPrj = ngcversion == 5
+  && ['-p', `${tempLibFolder}/tsconfig.es5.json`]
+  || { project: `${tempLibFolder}/tsconfig.es5.json` };
+
 return Promise.resolve()
   // Copy library to temporary folder and inline html/css.
   .then(() => _relativeCopy(`**/*`, srcFolder, tempLibFolder)
@@ -29,12 +38,12 @@ return Promise.resolve()
     .then(() => console.log('Inlining succeeded.'))
   )
   // Compile to ES2015.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.lib.json` })
+  .then(() => Promise.resolve(ngc(es6NgcPrj))
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
     .then(() => console.log('ES2015 compilation succeeded.'))
   )
   // Compile to ES5.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.es5.json` })
+  .then(() => Promise.resolve(ngc(es5NgcPrj))
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
     .then(() => console.log('ES5 compilation succeeded.'))
   )
