@@ -59,8 +59,8 @@ return Promise.resolve()
     const es5Entry = path.join(es5OutputFolder, `${libName}.js`);
     const es2015Entry = path.join(es2015OutputFolder, `${libName}.js`);
     const rollupBaseConfig = {
-      moduleName: camelCase(libName),
-      sourceMap: true,
+      name: camelCase(libName),
+      sourcemap: true,
       // ATTENTION:
       // Add any dependency or peer dependency your library to `globals` and `external`.
       // This is required for UMD bundle users.
@@ -90,30 +90,30 @@ return Promise.resolve()
 
     // UMD bundle.
     const umdConfig = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `bundles`, `${libName}.umd.js`),
+      input: es5Entry,
+      file: path.join(distFolder, `bundles`, `${libName}.umd.js`),
       format: 'umd',
     });
 
     // Minified UMD bundle.
     const minifiedUmdConfig = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `bundles`, `${libName}.umd.min.js`),
+      input: es5Entry,
+      file: path.join(distFolder, `bundles`, `${libName}.umd.min.js`),
       format: 'umd',
       plugins: rollupBaseConfig.plugins.concat([uglify({})])
     });
 
     // ESM+ES5 flat module bundle.
     const fesm5config = Object.assign({}, rollupBaseConfig, {
-      entry: es5Entry,
-      dest: path.join(distFolder, `${libName}.es5.js`),
+      input: es5Entry,
+      file: path.join(distFolder, `${libName}.es5.js`),
       format: 'es'
     });
 
     // ESM+ES2015 flat module bundle.
     const fesm2015config = Object.assign({}, rollupBaseConfig, {
-      entry: es2015Entry,
-      dest: path.join(distFolder, `${libName}.js`),
+      input: es2015Entry,
+      file: path.join(distFolder, `${libName}.js`),
       format: 'es'
     });
 

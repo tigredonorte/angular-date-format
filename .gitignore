@@ -5,6 +5,7 @@
 ## Angular ##
 # compiled output
 /dist
+/out-tsc
 /tmp
 /src/**/*.js
 /src/**/*.js.map
