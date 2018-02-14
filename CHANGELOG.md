@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.7"></a>
+## [0.2.7](https://github.com/gorilainvest/angular-date-format/compare/v0.2.6...v0.2.7) (2018-02-09)
+
+
+
+<a name="0.2.7"></a>
+## [0.2.7](https://github.com/gorilainvest/angular-date-format/compare/v0.2.6...v0.2.7) (2018-02-09)
+
+
+
+<a name="0.2.6"></a>
+## [0.2.6](https://github.com/gorilainvest/angular-date-format/compare/v0.2.5...v0.2.6) (2018-02-09)
+
+
+
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/gorilainvest/angular-date-format/compare/v0.2.4...v0.2.5) (2018-01-30)
+
+
+
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/gorilainvest/angular-date-format/compare/v0.2.3...v0.2.4) (2018-01-30)
+
+
+
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/gorilainvest/angular-date-format/compare/v0.2.2...v0.2.3) (2018-01-30)
+
+
+
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/gorilainvest/angular-date-format/compare/v0.2.2...v0.2.4) (2018-01-30)
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/gorilainvest/angular-date-format/compare/v0.2.2...v0.2.3) (2018-01-30)
 
