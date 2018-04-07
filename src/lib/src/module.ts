@@ -1,7 +1,8 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { LOCALE_ID, NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+  MAT_DATE_LOCALE_PROVIDER,
   MatInputModule,
   MatDatepickerModule,
   MatNativeDateModule
@@ -20,7 +21,9 @@ const CommonImports = [
 
 const CommonProviders = [
   DateFormatModel,
-  DateFormatValidator
+  DateFormatValidator,
+  { provide: LOCALE_ID, useValue: 'en-US' },
+  MAT_DATE_LOCALE_PROVIDER
 ];
 
 @NgModule({

@@ -50,8 +50,10 @@ return Promise.resolve()
   // Copy typings and metadata to `dist/` folder.
   .then(() => Promise.resolve()
     .then(() => _relativeCopy('**/*.d.ts', es2015OutputFolder, distFolder))
+    .then(() => _relativeCopy('**/*.js', es2015OutputFolder, distFolder))
     .then(() => _relativeCopy('**/*.metadata.json', es2015OutputFolder, distFolder))
     .then(() => console.log('Typings and metadata copy succeeded.'))
+    .catch(console.warn)
   )
   // Bundle lib.
   .then(() => {
@@ -143,8 +145,10 @@ return Promise.resolve()
 
 // Copy files maintaining relative paths.
 function _relativeCopy(fileGlob, from, to) {
+  // console.log(fileGlob, from, to);
   return new Promise((resolve, reject) => {
     glob(fileGlob, { cwd: from, nodir: true }, (err, files) => {
+      // console.log(err, files);
       if (err) reject(err);
       files.forEach(file => {
         const origin = path.join(from, file);

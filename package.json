@@ -1,6 +1,6 @@
 {
   "name": "angular-date-format",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "",
   "main": "./bundles/angular-date-format.umd.js",
   "module": "./angular-date-format.es5.js",
@@ -49,7 +49,17 @@
     "lint:lib": "tslint --project src/lib/tsconfig.lib.json -t verbose",
     "release": "standard-version",
     "docs": "compodoc -p tsconfig.doc.json -d docs",
-    "size": "size-limit"
+    "size": "size-limit",
+    "install:ng4": "concurrently \"npm run install:ng4:common\" \"npm run install:ng4:material\" \"npm run install:ng4:compiler\" \"npm run install:ng4:extra\"",
+    "install:ng4:common": "npm i @angular/common@4 @angular/core@4 @angular/forms@4 @angular/http@4 @angular/platform-browser@4 @angular/platform-browser-dynamic@4",
+    "install:ng4:material": "npm i @angular/animations@4 @angular/cdk@2.0.0-beta @angular/material@2.0.0-beta",
+    "install:ng4:compiler": "npm i @angular/compiler@4 @angular/compiler-cli@4",
+    "install:ng4:extra": "npm i typescript@2.3.4",
+    "install:ng5": "concurrently \"npm run install:ng5:common\" \"npm run install:ng5:material\" \"npm run install:ng5:compiler\" \"npm run install:ng5:extra\"",
+    "install:ng5:common": "npm i @angular/common@5 @angular/core@5 @angular/forms@5 @angular/http@5 @angular/platform-browser@5 @angular/platform-browser-dynamic@5",
+    "install:ng5:material": "npm i @angular/animations@5 @angular/cdk@5 @angular/material@5",
+    "install:ng5:compiler": "npm i @angular/compiler@5 @angular/compiler-cli@5",
+    "install:ng5:extra": "npm i typescript@2.6.1"
   },
   "peerDependencies": {
     "@angular/animations": ">=4 <6",
@@ -63,6 +73,7 @@
     "@angular/platform-browser-dynamic": ">=4 <6"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.0",
     "@angular/compiler": ">=2 <=5",
     "@angular/compiler-cli": ">=2 <=5",
     "@compodoc/compodoc": "1.0.4",
@@ -106,7 +117,7 @@
     "systemjs": "0.20.19",
     "ts-node": "3.3.0",
     "tslint": "5.8.0",
-    "typescript": "2.3.4 || 2.4.2",
+    "typescript": "2.3.4 || 2.6.1",
     "zone.js": "0.8.18"
   },
   "dependencies": {
