@@ -1,0 +1,131 @@
+{
+  "name": "angular-date-format",
+  "version": "0.2.8",
+  "description": "",
+  "main": "./bundles/angular-date-format.umd.js",
+  "module": "./angular-date-format.es5.js",
+  "es2015": "./angular-date-format.js",
+  "typings": "./angular-date-format.d.ts",
+  "author": {
+    "name": "Thompsom Moreira",
+    "email": "thompsom@gorilainvest.com.br"
+  },
+  "contributors": [
+    {
+      "name": "Guilherme J. de C. Gois",
+      "email": "guilherme.gois@gorilainvest.com.br"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorilainvest/angular-date-format"
+  },
+  "bugs": {
+    "url": "https://github.com/gorilainvest/angular-date-format/issues"
+  },
+  "engines": {
+    "node": ">= 6.9.0",
+    "npm": ">= 3.0.0"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "scripts": {
+    "clean": "rimraf out-tsc dist/*",
+    "prebuild": "npm run clean",
+    "build": "node build.js",
+    "build:size": "npm run build; npm run size",
+    "build-demo": "tsc -p src/demo/",
+    "build-demo:watch": "tsc -p src/demo/ -w",
+    "serve": "lite-server -c=bs-config.json",
+    "prestart": "npm run build-demo",
+    "start": "concurrently \"npm run build-demo:watch\" \"npm run serve\"",
+    "test": "karma start karma.conf.js",
+    "coverage": "karma start karma.conf.js --single-run",
+    "test:once": "karma start karma.conf.js --single-run",
+    "lint": "tslint --project tsconfig.json -t verbose",
+    "lint:demo": "tslint --project src/demo/tsconfig.json -t verbose",
+    "lint:lib": "tslint --project src/lib/tsconfig.lib.json -t verbose",
+    "release": "standard-version",
+    "docs": "compodoc -p tsconfig.doc.json -d docs",
+    "size": "size-limit",
+    "install:ng4": "concurrently \"npm run install:ng4:common\" \"npm run install:ng4:material\" \"npm run install:ng4:compiler\" \"npm run install:ng4:extra\"",
+    "install:ng4:common": "npm i @angular/common@4 @angular/core@4 @angular/forms@4 @angular/http@4 @angular/platform-browser@4 @angular/platform-browser-dynamic@4",
+    "install:ng4:material": "npm i @angular/animations@4 @angular/cdk@2.0.0-beta @angular/material@2.0.0-beta",
+    "install:ng4:compiler": "npm i @angular/compiler@4 @angular/compiler-cli@4",
+    "install:ng4:extra": "npm i typescript@2.3.4",
+    "install:ng5": "concurrently \"npm run install:ng5:common\" \"npm run install:ng5:material\" \"npm run install:ng5:compiler\" \"npm run install:ng5:extra\"",
+    "install:ng5:common": "npm i @angular/common@5 @angular/core@5 @angular/forms@5 @angular/http@5 @angular/platform-browser@5 @angular/platform-browser-dynamic@5",
+    "install:ng5:material": "npm i @angular/animations@5 @angular/cdk@5 @angular/material@5",
+    "install:ng5:compiler": "npm i @angular/compiler@5 @angular/compiler-cli@5",
+    "install:ng5:extra": "npm i typescript@2.6.1"
+  },
+  "peerDependencies": {
+    "@angular/animations": ">=4 <6",
+    "@angular/cdk": ">=2.0.0-beta <6",
+    "@angular/common": ">=4 <6",
+    "@angular/core": ">=4 <6",
+    "@angular/forms": ">=4 <6",
+    "@angular/http": ">=4 <6",
+    "@angular/material": ">=2.0.0-beta <6",
+    "@angular/platform-browser": ">=4 <6",
+    "@angular/platform-browser-dynamic": ">=4 <6"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.0",
+    "@angular/compiler": ">=2 <=5",
+    "@angular/compiler-cli": ">=2 <=5",
+    "@compodoc/compodoc": "1.0.4",
+    "@types/jasmine": "2.8.2",
+    "@types/node": "6.0.92",
+    "codelyzer": "4.0.1",
+    "concurrently": "3.5.0",
+    "core-js": "2.5.1",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.2.2",
+    "gulp-rollup": "2.15.0",
+    "jasmine-core": "2.8.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "karma": "1.7.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-cli": "1.0.1",
+    "karma-coverage-istanbul-reporter": "1.3.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-html-detailed-reporter": "1.1.21",
+    "karma-jasmine": "1.1.0",
+    "karma-jasmine-html-reporter": "0.2.2",
+    "karma-phantomjs-launcher": "1.0.4",
+    "karma-remap-coverage": "0.1.4",
+    "karma-typescript": "3.0.8",
+    "karma-typescript-angular2-transform": "1.0.2",
+    "lite-server": "2.3.0",
+    "node-sass": "4.6.1",
+    "node-sass-tilde-importer": "1.0.0",
+    "node-watch": "0.5.5",
+    "protractor": "5.2.0",
+    "rimraf": "2.6.2",
+    "rollup": "0.51.5",
+    "rollup-plugin-commonjs": "8.2.6",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rollup-plugin-sourcemaps": "0.4.2",
+    "rollup-plugin-uglify": "2.0.1",
+    "run-sequence": "2.2.0",
+    "rxjs": "5.5.2",
+    "size-limit": "0.13.2",
+    "systemjs": "0.20.19",
+    "ts-node": "3.3.0",
+    "tslint": "5.8.0",
+    "typescript": "2.3.4 || 2.6.1",
+    "zone.js": "0.8.18"
+  },
+  "dependencies": {
+    "angular2-text-mask": "8.0.4"
+  },
+  "size-limit": [
+    {
+      "path": "./out-tsc/lib/index.js"
+    }
+  ]
+}
