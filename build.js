@@ -13,7 +13,9 @@ const commonjs = require('rollup-plugin-commonjs');
 
 const inlineResources = require('./inline-resources');
 
-const libName = require('./package.json').name;
+const pjson = require('./package.json');
+const libName = pjson.name;
+const peerDeps = Object.keys(pjson.peerDependencies);
 const rootFolder = path.join(__dirname);
 const compilationFolder = path.join(rootFolder, 'out-tsc');
 const srcFolder = path.join(rootFolder, 'src/lib');
@@ -63,30 +65,17 @@ return Promise.resolve()
     const rollupBaseConfig = {
       name: camelCase(libName),
       sourcemap: true,
-      // ATTENTION:
-      // Add any dependency or peer dependency your library to `globals` and `external`.
-      // This is required for UMD bundle users.
-      globals: {
-        // The key here is library name, and the value is the the name of the global variable name
-        // the window object.
-        // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals for more.
-        '@angular/core': 'ng.core'
-      },
-      external: [
-        // List of dependencies
-        // See https://github.com/rollup/rollup/wiki/JavaScript-API#external for more.
-        '@angular/core'
-      ],
+      external: id => /@angular/.test(id),
       plugins: [
         commonjs({
           include: [
-            'node_modules/rxjs/**',
             'node_modules/text-mask-core/dist/textMaskCore.js',
             'node_modules/angular2-text-mask/dist/angular2TextMask.js'
-          ]
+          ],
+          ignore: id => /@angular/.test(id)
         }),
         sourcemaps(),
-        nodeResolve({ jsnext: true, module: true })
+        nodeResolve({ jsnext: true, module: true, main: true })
       ]
     };
 
@@ -145,10 +134,8 @@ return Promise.resolve()
 
 // Copy files maintaining relative paths.
 function _relativeCopy(fileGlob, from, to) {
-  // console.log(fileGlob, from, to);
   return new Promise((resolve, reject) => {
     glob(fileGlob, { cwd: from, nodir: true }, (err, files) => {
-      // console.log(err, files);
       if (err) reject(err);
       files.forEach(file => {
         const origin = path.join(from, file);
