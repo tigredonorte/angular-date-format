@@ -6,14 +6,14 @@ import { DateAdapter, NativeDateAdapter } from '@angular/material';
 /* Own modules */
 import { BaseDateFormatComponent } from '../base-date-format.component';
 
-interface ErrorMapping {
-  invalidDateError?: string;
-  minDateError?: string;
-  maxDateError?: string;
-  usefullDateError?: string;
-  holidayError?: string;
-  weekendError?: string;
-}
+export interface ErrorMapping {
+  invalidDateError?: string,
+  minDateError?: string,
+  maxDateError?: string,
+  usefullDateError?: string,
+  holidayError?: string,
+  weekendError?: string
+};
 
 @Component({
   selector: 'mat-date-format',
