@@ -1,20 +1,35 @@
 <div>
     <h1>Try some configs:</h1>
-    <input type="datetime" name="" value="">
-    <input type="date" name="" value="">
-    <input type="checkbox" name="" value="Usefull Date">
-    <input type="checkbox" name="" value="Holiday">
-    <input type="checkbox" name="" value="Weekend">
+    <input type="checkbox" name="" value="Usefull Date" [(ngModel)]="options.usefullDate">
+    Usefull Date
 
-    <date-format
-      [minDate]="options.minDate"
-      [maxDate]="options.maxDate"
+    <input type="checkbox" name="" value="Holiday" [(ngModel)]="options.holiday">
+    Holiday
+
+    <input type="checkbox" name="" value="Weekend" [(ngModel)]="options.weekend">
+    Weekend
+
+    <br><br>
+    MinDate
+    <br>
+    <input type="date" name="minDate" value="" [(ngModel)]="options.minDate">
+
+    <br><br>
+    MaxDate
+    <br>
+    <input type="date" name="maxDate" value="" [(ngModel)]="options.maxDate">
+
+    <hr/>
+    <mat-date-format
       [usefullDate]="options.usefullDate"
       [holiday]="options.holiday"
       [weekend]="options.weekend"
+      [minDate]="options.minDate"
+      [maxDate]="options.maxDate"
       placeholder="DD/MM/YYYY"
+      [control]="control"
       (ngModelChange)="updateDate($event)">
-    </date-format>
+    </mat-date-format>
 
     <h2>Raw config:</h2>
     <p>{{ options | json }}</p>

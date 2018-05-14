@@ -8,7 +8,7 @@
   "typings": "./angular-date-format.d.ts",
   "author": {
     "name": "Thompsom Moreira",
-    "email": "thompsom@gorilainvest.com.br"
+    "email": "thompson.moreira@gorilainvest.com.br"
   },
   "contributors": [
     {
@@ -65,6 +65,7 @@
   "devDependencies": {
     "@angular/compiler": ">=2 <=5",
     "@angular/compiler-cli": ">=2 <=5",
+    "@angular/cli": "1.7.3",
     "@compodoc/compodoc": "1.0.4",
     "@types/jasmine": "2.8.2",
     "@types/node": "6.0.92",
