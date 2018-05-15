@@ -1,5 +1,5 @@
-import { Component, Inject, LOCALE_ID } from '@angular/core';
-import { MAT_DATE_LOCALE } from '@angular/material';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,21 @@ import { MAT_DATE_LOCALE } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  control: FormControl = new FormControl('');
+  private minDate = '01/01/1900';
+  options = {
+    minDate: '01/01/1900',
+    maxDate: 'today',
+    usefullDate: false,
+    holiday: false,
+    weekend: false
+  };
 
-  constructor(@Inject(LOCALE_ID) localeId, @Inject(MAT_DATE_LOCALE) matLocale) {
-    console.log(localeId, matLocale);
+  constructor() {
+    this.updateDate('date');
+  }
+
+  private updateDate(ev) {
+    console.log(ev);
   }
 }

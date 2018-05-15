@@ -17,7 +17,6 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     @Input() placeholder: string;
     @Input() readonly: string;
 
-    @Input() displayFn: any = () => { };
     @Input() holiday = false;
     @Input() usefullDate = false;
     @Input() weekend = false;
@@ -31,6 +30,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     propagateChange: any = () => { };
     touchedChange: any = () => { };
     validateFn: any = () => { };
+    @Input() displayFn: any = () => { };
 
     get date() {
         return this._date;

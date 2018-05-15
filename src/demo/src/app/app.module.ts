@@ -1,9 +1,10 @@
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE_PROVIDER } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { MAT_DATE_LOCALE_PROVIDER } from '@angular/material';
-import { MatDateFormatModule } from 'angular-date-format';
 
+import { MatDateFormatModule } from '../../../lib/src/module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     NoopAnimationsModule,
+    FormsModule,
     MatDateFormatModule
   ],
   providers: [
