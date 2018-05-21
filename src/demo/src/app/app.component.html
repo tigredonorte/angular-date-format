@@ -12,22 +12,23 @@
   <br><br>
   MinDate
   <br>
-  <input type="date" name="minDate" value="" [(ngModel)]="options.minDate">
+  <input type="date" name="minDate" [(ngModel)]="options.minDate">
 
   <br><br>
   MaxDate
   <br>
-  <input type="date" name="maxDate" value="" [(ngModel)]="options.maxDate">
+  <input type="date" name="maxDate" [(ngModel)]="options.maxDate">
 
   <hr/>
 
   <mat-date-format
-    placeholder='Data de negociação'
     [usefullDate]="options.usefullDate"
     [holiday]="options.holiday"
     [weekend]="options.weekend"
     [minDate]="options.minDate"
     [maxDate]="options.maxDate"
+    [displayFn] = "dateDisplayFn"
+    format="DD/MM/YYYY"
     placeholder="DD/MM/YYYY"
     [control]="control">
   </mat-date-format>
