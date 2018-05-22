@@ -18,9 +18,6 @@
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
-      ],
-      "angular-date-format/*": [
-        "../node_modules/angular-date-format/*"
       ]
     }
   }

@@ -26,6 +26,14 @@ const CommonProviders = [
   MAT_DATE_LOCALE_PROVIDER
 ];
 
+const MaterialImports = [
+  ...CommonImports,
+  ReactiveFormsModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+];
+
 @NgModule({
   imports: CommonImports,
   declarations: [DateFormatComponent],
@@ -40,14 +48,6 @@ export class DateFormatModule {
     };
   }
 }
-
-const MaterialImports = [
-  ...CommonImports,
-  ReactiveFormsModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatNativeDateModule
-];
 
 @NgModule({
   imports: MaterialImports,
