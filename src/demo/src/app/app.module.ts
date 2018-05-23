@@ -1,5 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE_PROVIDER } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     NoopAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDateFormatModule
   ],
   providers: [

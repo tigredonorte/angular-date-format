@@ -21,17 +21,21 @@
 
   <hr/>
 
-  <mat-date-format
-    [control]="control"
-    [usefullDate]="options.usefullDate"
-    [holiday]="options.holiday"
-    [weekend]="options.weekend"
-    [minDate]="options.minDate"
-    [maxDate]="options.maxDate"
-    format="DD/MM/YYYY"
-    placeholder="testando placeholder"
-  >
-  </mat-date-format>
+  <form [formGroup]="form">
+    <mat-date-format
+      name="date"
+      formControlName="date"
+      [usefullDate]="options.usefullDate"
+      [holiday]="options.holiday"
+      [weekend]="options.weekend"
+      [minDate]="options.minDate"
+      [maxDate]="options.maxDate"
+      [forceMask]="true"
+      placeholder='Type a date'
+      format="DD/MM/YYYY"
+    >
+    </mat-date-format>
+  </form>
 
   <h2>Raw config:</h2>
   <p>{{ options | json }}</p>

@@ -54,12 +54,12 @@
     "install:ng4:common": "npm i @angular/common@4 @angular/core@4 @angular/forms@4 @angular/http@4 @angular/platform-browser@4 @angular/platform-browser-dynamic@4",
     "install:ng4:material": "npm i @angular/animations@4 @angular/cdk@2.0.0-beta @angular/material@2.0.0-beta",
     "install:ng4:compiler": "npm i @angular/compiler@4 @angular/compiler-cli@4",
-    "install:ng4:extra": "npm i typescript@2.3.4",
+    "install:ng4:extra": "npm i typescript@2.3.4 ramda rxjs",
     "install:ng5": "npm run install:ng5:common && npm run install:ng5:material && npm run install:ng5:compiler && npm run install:ng5:extra\"",
     "install:ng5:common": "npm i @angular/common@5 @angular/core@5 @angular/forms@5 @angular/http@5 @angular/platform-browser@5 @angular/platform-browser-dynamic@5",
     "install:ng5:material": "npm i @angular/animations@5 @angular/cdk@5 @angular/material@5",
     "install:ng5:compiler": "npm i @angular/compiler@5 @angular/compiler-cli@5",
-    "install:ng5:extra": "npm i typescript@2.6.1"
+    "install:ng5:extra": "npm i typescript@2.6.1 ramda rxjs"
   },
   "peerDependencies": {
     "@angular/animations": ">=4 <6",
@@ -70,7 +70,9 @@
     "@angular/http": ">=4 <6",
     "@angular/material": ">=2.0.0-beta <6",
     "@angular/platform-browser": ">=4 <6",
-    "@angular/platform-browser-dynamic": ">=4 <6"
+    "@angular/platform-browser-dynamic": ">=4 <6",
+    "ramda": "^0.25.0",
+    "rxjs": "^5.5.6"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",

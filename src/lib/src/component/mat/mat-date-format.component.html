@@ -2,20 +2,13 @@
   <input matInput
     type='tel'
     [ngClass]='cssclass'
-    [textMask]='{mask:dateMask, showMask: !placeholder, pipe: datePipe, keepCharPositions: true}'
+    [textMask]='{mask:dateMask, showMask: true, pipe: datePipe, keepCharPositions: true}'
     [placeholder]='placeholder'
     [readonly]='readonly'
     [name]='inputname'
-    [formControl]='control'
-    [value]='_date'
-
+    [formControl]='field'
     [min]="minDate"
     [max]="maxDate"
-
-    (focus)='focusEvent($event)'
-    (keyup)='keyUpEvent($event)'
-    (keydown)='keyDownEvent($event)'
   />
-  
-  <mat-error *ngIf="error">{{error}}</mat-error>
+  <mat-error>{{error}}</mat-error>
 </mat-form-field>
