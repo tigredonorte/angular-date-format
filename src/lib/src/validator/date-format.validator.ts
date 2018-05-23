@@ -1,15 +1,13 @@
 /* Angular modules */
 import { ValidatorFn, AbstractControl } from '@angular/forms';
-
-/* Own modules */
-import { DateFormatEnum } from '../model/date-format.enum';
-import { DateFormatModel } from '../model/date-format.model';
+import * as moment from 'moment/moment';
 
 export class DateFormatValidator {
   static validator: DateFormatValidator = null;
 
-  dateModel: DateFormatModel = null;
   holidays = new Array();
+  format = 'YYYY-MM-DD';
+  formats = ['YYYY-MM-DD', 'DD/MM/YYYY'];
 
   public static _IsUsefullDay(date: string) {
     if (DateFormatValidator.validator === null) {
@@ -19,53 +17,55 @@ export class DateFormatValidator {
   }
 
   public static validate(options: any): ValidatorFn {
-    let validator = new DateFormatValidator();
-    let model = new DateFormatModel();
-    return function(c: AbstractControl) {
+    const validator = new DateFormatValidator();
+    return function (c: AbstractControl) {
       try {
+        const userDate = c.value;
+        const date = moment.utc(userDate, validator.formats).format(validator.format);
+        if (date === 'Invalid date' || userDate.indexOf('_') !== -1) {
+          return { invalidDateError: { given: userDate } };
+        }
+
         if (typeof options.minDate !== 'undefined' && options.minDate === 'today') {
-          options.minDate = model.getAmericanDate('');
+          options.minDate = moment.utc().format(validator.format);
+        }
+
+        if (false === validator.minDateCheck(date, options.minDate)) {
+          return {
+            minDateError: { given: userDate, minDate: moment.utc(options.minDate, validator.formats).format(validator.formats[1]) }
+          };
         }
 
         if (typeof options.maxDate !== 'undefined' && options.maxDate === 'today') {
-          options.maxDate = model.getAmericanDate('');
-        }
-
-        let userDate = c.value;
-        let date = model.getAmericanDate(userDate);
-        if (false === validator.isValidDate(date)) {
-          return { invalidDateError: { given: userDate } };
-        }
-        if (false === validator.minDateCheck(date, options.minDate)) {
-          return { minDateError: { given: userDate, minDate: model.getBrazilianDate(options.minDate) } };
+          options.maxDate = moment.utc().format(validator.format);
         }
         if (false === validator.maxDateCheck(date, options.maxDate)) {
-          return { maxDateError: { given: userDate, maxDate: model.getBrazilianDate(options.maxDate) } };
+          return {
+            maxDateError: { given: userDate, maxDate: moment.utc(options.minDate, validator.formats).format(validator.formats[1]) }
+          };
         }
         if (options.usefullDate && false === validator.isUsefullDay(date)) {
           return { usefullDateError: { given: userDate } };
         }
-        if (options.holiday && false === validator.isHoliday(date)) {
+        if (options.holiday && true === validator.isHoliday(date)) {
           return { holidayError: { given: userDate } };
         }
-        if (options.weekend && false === validator.isWeekend(date)) {
+        if (options.weekend && true === validator.isWeekend(date)) {
           return { weekendError: { given: userDate } };
         }
         return null;
       } catch (e) {
-        console.log(e);
+        console.warn(e);
         return null;
       }
     };
   }
 
-  public constructor() {
-    this.dateModel = new DateFormatModel();
-  }
+  public constructor() { }
 
   public getDateBySpecialString(date: string): string {
     if (date === 'today') {
-      return this.dateModel.getAmericanDate('');
+      return moment.utc().format(this.format)
     }
     return date;
   }
@@ -129,15 +129,13 @@ export class DateFormatValidator {
 
   public isHoliday(date: string) {
     try {
-      const e0 = date.split('T');
-      const dt = e0[0];
-      const e = dt.split('-');
-      this.getHolidays(e[0]);
-
-      const i = this.holidays[e[0]].indexOf(dt);
-      return i !== -1;
+      const _date = moment.utc(date, this.formats);
+      const year = _date.format('YYYY');
+      this.getHolidays(year);
+      const f = this.holidays[year].indexOf(_date.format('YYYY-MM-DD'));
+      return this.holidays[year].indexOf(_date.format('YYYY-MM-DD')) !== -1;
     } catch (e) {
-      console.log('isHoliday failure!', e);
+      console.warn('isHoliday failure!', e);
       return false;
     }
   }
@@ -150,8 +148,8 @@ export class DateFormatValidator {
   }
 
   public isValidDate(str: string): boolean {
-    const date = this.dateModel.string2date(str);
-    return date === null ? false : true;
+    const date = moment.utc(str, this.formats).format(this.format);
+    return date === 'Invalid date' ? false : true;
   }
 
   public isWeekend(date: string) {
@@ -163,21 +161,15 @@ export class DateFormatValidator {
   }
 
   public maxDateCheck(val: string, maxDate: string) {
-    maxDate = this.getDateBySpecialString(maxDate);
-    if (maxDate !== '' && this.dateModel.diffDate(maxDate, val, DateFormatEnum.DAY) < 0) {
-      return false;
-    }
-    return true;
+    const a = moment(maxDate, this.formats);
+    const b = moment(val, this.formats);
+    return maxDate && a.isAfter(b);
   }
 
   public minDateCheck(val: string, minDate: string) {
-    minDate = this.getDateBySpecialString(minDate);
-
-    if (minDate && minDate !== '' && this.dateModel.diffDate(val, minDate, DateFormatEnum.DAY) < 0) {
-      return false;
-    }
-
-    return true;
+    const a = moment(minDate, this.formats);
+    const b = moment(val, this.formats);
+    return minDate && a.isBefore(b);
   }
 
   private createHolidayDate(timestamp: number): string {

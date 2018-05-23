@@ -13,47 +13,21 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
   @Input() minDate: string;
   @Input() placeholder: string;
   @Input() readonly: string;
-
   @Input() holiday = false;
   @Input() usefullDate = false;
   @Input() weekend = false;
-  @Input() _date = '';
   @Input() format = 'YYYY-MM-DD';
+  datePipe = createAutoCorrectedDatePipe(this.format);
+  _date = '';
+  dateMask = [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
 
   value: string;
   dateModel: DateFormatModel = null;
   dateValidator: DateFormatValidator = null;
 
-  @Input() dateMask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
-  propagateChange: any = () => {};
-  touchedChange: any = () => {};
-  validateFn: any = () => {};
-  @Input() displayFn: any = (data) => moment.utc(data).format(this.format);
-
-  get date() {
-    return this._date;
-  }
-  set date(newValue) {
-    try {
-      if (!newValue || newValue.trim() === '') {
-        this.setEmptyValue();
-        return;
-      }
-
-      newValue = this.initValue(newValue);
-      if (newValue === '') {
-        return;
-      }
-      this._date = newValue;
-
-      // const temp = this.displayFn(newValue);
-      console.log(newValue);
-      this.propagateChange(newValue);
-    } catch (e) {
-      console.log(e);
-      this.setEmptyValue();
-    }
-  }
+  propagateChange: any = () => { };
+  touchedChange: any = () => { };
+  validateFn: any = () => { };
 
   constructor() {
     this.dateValidator = new DateFormatValidator();
@@ -66,6 +40,42 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     this.cssclass = 'form-control';
   }
 
+  getDateMask = (data) => {
+    const out = [];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] === '/' || data[i] === '-') {
+        out.push(data[i]);
+      } else {
+        out.push(/\d/);
+      }
+    }
+    return out;
+  }
+
+  transformDate = (date, format = this.format) => date.indexOf('_') !== -1 ? date : moment.utc(date, [format]).format(format);
+  get date() {
+    return this._date;
+  }
+  set date(newValue) {
+    try {
+      if (!newValue || newValue.trim() === '') {
+        this.setEmptyValue();
+        return;
+      }
+
+      const val = this.transformDate(newValue);
+      if (val === '' || val === 'Invalid date') {
+        this._date = newValue;
+        return;
+      }
+      this._date = val;
+      this.propagateChange(val);
+    } catch (e) {
+      console.warn(e);
+      this.setEmptyValue();
+    }
+  }
+
   ngOnInit() {
     try {
       this.touchedChange();
@@ -76,7 +86,7 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
         moment.utc().format(this.format);
       }
 
-      let obj = {
+      const obj = {
         minDate: this.minDate,
         maxDate: this.maxDate,
         holiday: this.holiday,
@@ -86,7 +96,36 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
 
       this.validateFn = DateFormatValidator.validate(obj);
     } catch (e) {
-      console.log(e);
+      console.warn(e);
+    }
+  }
+
+  ngOnChanges(inputs: any) {
+    try {
+      if (inputs['format']) {
+        this.dateMask = this.getDateMask(this.format);
+        this.datePipe = createAutoCorrectedDatePipe(this.format);
+      }
+
+      if (inputs['minDate'] && inputs['minDate'] === 'today') {
+        this.minDate = moment.utc().format(this.format);
+      }
+      if (inputs['maxDate'] && inputs['maxDate'] === 'today') {
+        this.maxDate = moment.utc().format(this.format);
+      }
+      if (inputs['minDate'] || inputs['maxDate'] || inputs['holiday'] || inputs['weekend'] || inputs['usefullDate']) {
+        const obj = {
+          minDate: this.minDate,
+          maxDate: this.maxDate,
+          holiday: this.holiday,
+          weekend: this.weekend,
+          usefullDate: this.usefullDate
+        };
+
+        this.validateFn = DateFormatValidator.validate(obj);
+      }
+    } catch (e) {
+      console.warn(e);
     }
   }
 
@@ -99,79 +138,6 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
   }
 
   public keyDownEvent(e: KeyboardEvent) {
-    const value = this._date.split('').reverse().join('');
-    const num = parseInt(e.key, 10);
-
-    if (isNaN(num)) {
-      return;
-    }
-    if (typeof value === 'undefined' || value === '') {
-      return num <= 3 ? true : false;
-    }
-
-    /**
-     * Check days
-     */
-    if (value[0] === '_') {
-      if (value[1] === '_') {
-        return true;
-      }
-      const v = parseInt(`${value[1]}${num}`, 10);
-      return (v <= 31 && v > 0);
-    }
-
-    if (value[1] === '_') {
-      if (parseInt(value[0], 10) < 3) {
-        return true;
-      }
-      return num < 2 ? true : false;
-    }
-
-
-    /**
-     * Check months
-     */
-    if (value[3] === '_') {
-      if (value[4] === '_') {
-        return true;
-      }
-      return num < 2 ? true : false;
-    }
-    if (value[4] === '_') {
-      if (parseInt(value[3], 10) !== 0 && num > 2) {
-        return false;
-      }
-
-      const day = parseInt(value[0] + '' + value[1], 10);
-      const month = parseInt(value[3] + '' + num, 10);
-
-      if (month === 2) {
-        return day <= 29;
-      }
-      if (month === 4 || month === 6 || month === 9 || month === 11) {
-        return day <= 30 ? true : false;
-      }
-      return day <= 31 ? true : false;
-    }
-
-    /**
-     * check year
-     */
-    if (value[6] === '_') {
-      const n = (num + 1) * 1000 - 1;
-      if (false === this.checkTypingMin(n)) {
-        return false;
-      }
-
-      const n2 = num * 1000 - 1;
-      if (false === this.checkTypingMax(n2)) {
-        return false;
-      }
-    }
-
-    if (value[8] === '_') {
-      return true;
-    }
     return true;
   }
 
@@ -180,78 +146,9 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     this.date = value;
   }
 
-  private checkTypingMax(n: number) {
-    try {
-      if (this.maxDate !== '') {
-        const max = this.dateModel.string2date(this.maxDate);
-        if (max instanceof Date) {
-          if (max.getFullYear() < n) {
-            return false;
-          }
-        }
-      }
-      return true;
-    } catch (e) {
-      console.warn(e);
-      return false;
-    }
-  }
-
-  private checkTypingMin(n: number) {
-    if (this.minDate !== '') {
-      const min = this.dateModel.string2date(this.minDate);
-      if (min instanceof Date) {
-        if (min.getFullYear() > n) {
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
-  private initValue(date: string): string {
-    let temp: any = [];
-    try {
-      temp = date.split('T');
-    } catch (e) {
-      console.log(e);
-      temp = date;
-    }
-
-    try {
-      return this.dateModel.getBrazilianDate(temp[0]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
   private setEmptyValue() {
     this._date = '';
     this.propagateChange('');
-  }
-
-  ngOnChanges(inputs: any) {
-    try {
-      if (inputs['minDate'] && inputs['minDate'] === 'today') {
-        this.minDate = moment.utc().format(this.format);
-      }
-      if (inputs['maxDate'] && inputs['maxDate'] === 'today') {
-        this.maxDate = moment.utc().format(this.format);
-      }
-      if (inputs['minDate'] || inputs['maxDate'] || inputs['holiday'] || inputs['weekend'] || inputs['usefullDate']) {
-        let obj = {
-          minDate: inputs['minDate'] ? inputs['minDate'] : this.minDate,
-          maxDate: inputs['maxDate'] ? inputs['maxDate'] : this.maxDate,
-          holiday: inputs['holiday'] ? inputs['holiday'] : this.holiday,
-          weekend: inputs['weekend'] ? inputs['weekend'] : this.weekend,
-          usefullDate: inputs['usefullDate'] ? inputs['usefullDate'] : this.usefullDate
-        };
-
-        this.validateFn = DateFormatValidator.validate(obj);
-      }
-    } catch (e) {
-      console.log(e);
-    }
   }
 
   validate(c: FormControl) {
@@ -261,12 +158,6 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
   /**********************************************************
    **BEGIN implementation of ControlValueAccessor interface**
    **********************************************************/
-
-  /**
-   * writeValue(obj: any) is the method that writes a new value from the form model
-   * into the view or (if needed) DOM property. This is where we want to update our
-   * counterValue model, as that’s the thing that is used in the view.
-   */
   writeValue(value: any) {
     if (value) {
       try {
@@ -279,32 +170,14 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
     }
   }
 
-  /**
-   * registerOnChange(fn: any) is a method that registers a handler that should
-   * be called when something in the view has changed. It gets a function
-   * that tells other form directives and form controls to update their values.
-   * In other words, that’s the handler function we want to call whenever
-   * price changes through the view.
-   */
   registerOnChange(fn: Function) {
     this.propagateChange = fn;
   }
 
-  /**
-   * registerOnTouched(fn: any) Similiar to registerOnChange(), this registers
-   * a handler specifically for when a control receives a touch event.
-   * We don’t need that in our custom control.
-   */
   registerOnTouched(fn: Function) {
     this.touchedChange = fn;
   }
 
-  /**
-   * This function is called when the control status changes to or from 'DISABLED'.
-   * Depending on the value, it will enable or disable the appropriate DOM element.
-   *
-   * @param isDisabled
-   */
   setDisabledState(isDisabled: boolean) {
     this.disabled = isDisabled;
     this.readonly = isDisabled ? '1' : '';
@@ -312,4 +185,66 @@ export abstract class BaseDateFormatComponent implements ControlValueAccessor, O
   /********************************************************
    **END implementation of ControlValueAccessor interface**
    ********************************************************/
+}
+
+export default function createAutoCorrectedDatePipe(dateFormat = 'YYYY-MM-DD') {
+  return function (conformedValue) {
+    const indexesOfPipedChars = [];
+    const dateFormatArray = dateFormat.split(/[^DMYHms]+/);
+    const maxValue = { 'DD': 31, 'MM': 12, 'YY': 99, 'YYYY': 9999, 'HH': 23, 'mm': 59, 'ss': 59 }
+    const minValue = { 'DD': 1, 'MM': 1, 'YY': 0, 'YYYY': 1, 'HH': 0, 'mm': 0, 'ss': 0 }
+    const conformedValueArr = conformedValue.split('');
+
+    // Check first digit
+    dateFormatArray.forEach((format) => {
+      const position = dateFormat.indexOf(format);
+      const maxFirstDigit = parseInt(maxValue[format].toString().substr(0, 1), 10);
+
+      if (parseInt(conformedValueArr[position], 10) > maxFirstDigit) {
+        conformedValueArr[position + 1] = conformedValueArr[position];
+        conformedValueArr[position] = 0;
+        indexesOfPipedChars.push(position);
+      }
+    })
+
+    // Check for invalid date
+    const assocFormat = {};
+    const isInvalid = dateFormatArray.some((format) => {
+      const position = dateFormat.indexOf(format);
+      const length = format.length;
+      const textValue = conformedValue.substr(position, length).replace(/\D/g, '');
+      const value = parseInt(textValue, 10);
+
+      assocFormat[format] = value;
+      return value > maxValue[format] || (textValue.length === length && value < minValue[format]);
+    });
+
+    if (isInvalid) {
+      return false;
+    }
+
+    if (false === checkMonthConsistency(assocFormat)) {
+      return false;
+    }
+
+    return {
+      value: conformedValueArr.join(''),
+      indexesOfPipedChars
+    };
+  }
+
+  function checkMonthConsistency(assocFormat) {
+    const d = assocFormat['DD'];
+    const m = assocFormat['MM'];
+    if (isNaN(m) || isNaN(d)) {
+      return true;
+    }
+    if (m === 2) {
+      return d <= 29;
+    }
+    if (m === 4 || m === 6 || m === 9 || m === 11) {
+      return d <= 30 ? true : false;
+    }
+    return d <= 31 ? true : false;
+  }
 }

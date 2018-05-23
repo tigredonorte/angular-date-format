@@ -9,8 +9,8 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   control: FormControl = new FormControl('');
   options = {
-    minDate: '1900-01-01',
-    maxDate: '',
+    minDate: '2017-01-02',
+    maxDate: '2018-01-04',
     usefullDate: false,
     holiday: false,
     weekend: false

@@ -22,15 +22,15 @@
   <hr/>
 
   <mat-date-format
+    [control]="control"
     [usefullDate]="options.usefullDate"
     [holiday]="options.holiday"
     [weekend]="options.weekend"
     [minDate]="options.minDate"
     [maxDate]="options.maxDate"
-    [displayFn] = "dateDisplayFn"
     format="DD/MM/YYYY"
-    placeholder="DD/MM/YYYY"
-    [control]="control">
+    placeholder="testando placeholder"
+  >
   </mat-date-format>
 
   <h2>Raw config:</h2>

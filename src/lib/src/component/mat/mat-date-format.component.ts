@@ -1,7 +1,6 @@
 /* Angular modules */
-import { Component, Input, forwardRef, OnInit } from '@angular/core';
+import { Component, Input, forwardRef, OnChanges, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
-import { DateAdapter, NativeDateAdapter } from '@angular/material';
 
 /* Own modules */
 import { BaseDateFormatComponent } from '../base-date-format.component';
@@ -23,7 +22,7 @@ export interface ErrorMapping {
     { provide: NG_VALIDATORS, useExisting: forwardRef(() => MatDateFormatComponent), multi: true }
   ]
 })
-export class MatDateFormatComponent extends BaseDateFormatComponent implements ControlValueAccessor, OnInit {
+export class MatDateFormatComponent extends BaseDateFormatComponent implements ControlValueAccessor, OnChanges, OnInit {
   @Input()
   errorMapping: ErrorMapping = {
     invalidDateError: 'Insert a valid date.',
@@ -38,33 +37,28 @@ export class MatDateFormatComponent extends BaseDateFormatComponent implements C
 
   public error = '';
 
-  private statusSubscription;
-
-  constructor(private dateAdapter: DateAdapter<NativeDateAdapter>) {
-    super();
+  public ngOnChanges(input) {
+    super.ngOnChanges(input);
+    this.control.setValidators([this.validateFn]);
+    this.control.updateValueAndValidity();
   }
 
   ngOnInit() {
     super.ngOnInit();
-
-    this.dateAdapter.setLocale(this.locale);
-    const self = this;
-    this.control.valueChanges.subscribe((data) => {
-      self._date = data;
-    });
     this.control.statusChanges.subscribe((status) => {
-      if (status === 'VALID' || !Object.keys(self.control.errors || {}).length) {
-        self.error = '';
+      if (status === 'VALID' || !Object.keys(this.control.errors || {}).length) {
+        this.error = '';
         return;
       }
-      const firstError = Object.keys(self.control.errors)[0];
+      const firstError = Object.keys(this.control.errors)[0];
       if (firstError === 'minDateError') {
-        self.error = self.errorMapping[firstError].replace('${minDate}', self.minDate);
+        this.error = this.errorMapping[firstError].replace('${minDate}', this.transformDate(this.minDate));
       } else if (firstError === 'maxDateError') {
-        self.error = self.errorMapping[firstError].replace('${maxDate}', self.maxDate);
+        this.error = this.errorMapping[firstError].replace('${maxDate}', this.transformDate(this.maxDate));
       } else {
-        self.error = self.errorMapping[firstError];
+        this.error = this.errorMapping[firstError];
       }
     });
   }
+
 }
