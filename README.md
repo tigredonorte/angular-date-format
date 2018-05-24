@@ -45,26 +45,20 @@ export class AppModule { }
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
-```
-
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+```html
+  <mat-date-format
+    name="date"
+    usefullDate="false"
+    holiday="false"
+    weekend="false"
+    minDate=""
+    maxDate=""
+    forceMask="false"
+    placeholder='Type a date'
+    format="DD/MM/YYYY"
+    [(ngModel)]="myModel"
+  >
+  </mat-date-format>
 ```
 
 ## License
