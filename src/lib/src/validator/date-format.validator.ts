@@ -149,7 +149,6 @@ export class DateFormatValidator {
 
   public isValidDate(str: string): boolean {
     const date = moment.utc(str, this.formats).format(this.format);
-    console.log(str, date);
     return date === 'Invalid date' ? false : true;
   }
 
