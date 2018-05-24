@@ -22,13 +22,14 @@ const srcFolder = path.join(rootFolder, 'src/lib');
 const distFolder = path.join(rootFolder, 'dist');
 const tempLibFolder = path.join(compilationFolder, 'lib');
 const es5OutputFolder = path.join(compilationFolder, 'lib-es5');
-const es2015OutputFolder = path.join(compilationFolder, 'lib-es2015');
+
+/**
+ * IF YOU ARE AN ES2015 WIDOW, check this snippet
+ * https://gist.github.com/tigredonorte/b736b0ef656c106515f89206edf2dda1
+ */
 
 const ngcpjson = require('@angular/compiler-cli/package.json');
 const ngcversion = ngcpjson.version.split('.')[0];
-const es6NgcPrj = ngcversion == 5
-&& ['-p', `${tempLibFolder}/tsconfig.lib.json`]
-|| { project: `${tempLibFolder}/tsconfig.lib.json` };
 const es5NgcPrj = ngcversion == 5
   && ['-p', `${tempLibFolder}/tsconfig.es5.json`]
   || { project: `${tempLibFolder}/tsconfig.es5.json` };
@@ -39,29 +40,15 @@ return Promise.resolve()
     .then(() => inlineResources(tempLibFolder))
     .then(() => console.log('Inlining succeeded.'))
   )
-  // Compile to ES2015.
-  .then(() => Promise.resolve(ngc(es6NgcPrj))
-    .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
-    .then(() => console.log('ES2015 compilation succeeded.'))
-  )
   // Compile to ES5.
   .then(() => Promise.resolve(ngc(es5NgcPrj))
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
     .then(() => console.log('ES5 compilation succeeded.'))
   )
-  // Copy typings and metadata to `dist/` folder.
-  .then(() => Promise.resolve()
-    .then(() => _relativeCopy('**/*.d.ts', es2015OutputFolder, distFolder))
-    .then(() => _relativeCopy('**/*.js', es2015OutputFolder, distFolder))
-    .then(() => _relativeCopy('**/*.metadata.json', es2015OutputFolder, distFolder))
-    .then(() => console.log('Typings and metadata copy succeeded.'))
-    .catch(console.warn)
-  )
   // Bundle lib.
   .then(() => {
     // Base configuration.
     const es5Entry = path.join(es5OutputFolder, `${libName}.js`);
-    const es2015Entry = path.join(es2015OutputFolder, `${libName}.js`);
     const rollupBaseConfig = {
       name: camelCase(libName),
       sourcemap: true,
@@ -101,18 +88,10 @@ return Promise.resolve()
       format: 'es'
     });
 
-    // ESM+ES2015 flat module bundle.
-    const fesm2015config = Object.assign({}, rollupBaseConfig, {
-      input: es2015Entry,
-      file: path.join(distFolder, `${libName}.js`),
-      format: 'es'
-    });
-
     const allBundles = [
       umdConfig,
       minifiedUmdConfig,
-      fesm5config,
-      fesm2015config
+      fesm5config
     ].map(cfg => rollup.rollup(cfg).then(bundle => bundle.write(cfg)));
 
     return Promise.all(allBundles)
