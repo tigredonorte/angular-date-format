@@ -1,6 +1,6 @@
 {
   "name": "angular-date-format",
-  "version": "0.2.9",
+  "version": "0.0.0-development",
   "description": "",
   "main": "./bundles/angular-date-format.umd.js",
   "module": "./angular-date-format.es5.js",
@@ -59,7 +59,9 @@
     "install:ng5:common": "npm i @angular/common@5 @angular/core@5 @angular/forms@5 @angular/http@5 @angular/platform-browser@5 @angular/platform-browser-dynamic@5",
     "install:ng5:material": "npm i @angular/animations@5 @angular/cdk@5 @angular/material@5",
     "install:ng5:compiler": "npm i @angular/compiler@5 @angular/compiler-cli@5",
-    "install:ng5:extra": "npm i typescript@2.6.1 ramda rxjs@5"
+    "install:ng5:extra": "npm i typescript@2.6.1 ramda rxjs@5",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "peerDependencies": {
     "@angular/animations": ">=4 <6",
@@ -114,8 +116,11 @@
     "rollup-plugin-sourcemaps": "0.4.2",
     "rollup-plugin-uglify": "2.0.1",
     "run-sequence": "2.2.0",
+    "semantic-release": "^15.5.0",
+    "semantic-release-tamia": "^2.2.4",
     "size-limit": "0.13.2",
     "systemjs": "0.20.19",
+    "travis-deploy-once": "^5.0.0",
     "ts-node": "3.3.0",
     "tslint": "5.8.0",
     "typescript": "^2.6.1",
@@ -128,5 +133,10 @@
     {
       "path": "./dist/angular-date-format.js"
     }
-  ]
+  ],
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
+  }
 }
