@@ -9,6 +9,9 @@
   <input type="checkbox" name="" value="Weekend" [(ngModel)]="options.weekend">
   Weekend
 
+  <input type="checkbox" name="" value="Weekend" [(ngModel)]="options.forceMask">
+  Force Mask
+
   <br><br>
   MinDate
   <br>
@@ -18,6 +21,14 @@
   MaxDate
   <br>
   <input type="date" name="maxDate" [(ngModel)]="options.maxDate">
+
+  <br><br>
+  Format
+  <br>
+  <select [(ngModel)]="options.format">
+    <option value='DD/MM/YYYY'>DD/MM/YYYY</option>
+    <option value='YYYY-MM-DD'>YYYY-MM-DD</option>
+  </select>
 
   <hr/>
 
@@ -30,12 +41,15 @@
       [weekend]="options.weekend"
       [minDate]="options.minDate"
       [maxDate]="options.maxDate"
-      [forceMask]="true"
+      [forceMask]="options.forceMask"
       placeholder='Type a date'
-      format="DD/MM/YYYY"
+      [format]="options.format"
     >
     </mat-date-format>
   </form>
+  <br><br>
+  computed: {{value}}
+  <br>
 
   <h2>Raw config:</h2>
   <p>{{ options | json }}</p>

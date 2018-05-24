@@ -1,9 +1,10 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidatorFn, FormControl } from '@angular/forms';
-import { DateFormatValidator } from '../validator/date-format.validator';
-import { BaseFieldComponet, TranslationObject } from '../base-field.component';
+import { Input, OnChanges } from '@angular/core';
+import { ValidatorFn } from '@angular/forms';
 import * as moment from 'moment/moment';
+
 import { createAutoCorrectedDatePipe } from '../pipe/create-auto-corrected-date.pipe';
+import { DateFormatValidator } from '../validator/date-format.validator';
+import { BaseFieldComponet, TranslationObject } from './base-field.component';
 
 export interface ErrorMapping extends TranslationObject {
   invalidDateError?: string,
@@ -14,7 +15,7 @@ export interface ErrorMapping extends TranslationObject {
   weekendError?: string
 };
 
-export class BaseDateFormatComponent extends BaseFieldComponet {
+export class BaseDateFormatComponent extends BaseFieldComponet implements OnChanges {
 
   @Input() cssclass: string;
   @Input() disabled: boolean;
@@ -39,6 +40,8 @@ export class BaseDateFormatComponent extends BaseFieldComponet {
     try {
       if (inputs['format']) {
         this.dateMask = this.getDateMask(this.format);
+      }
+      if (inputs['format'] || inputs['forceMask']) {
         this.datePipe = createAutoCorrectedDatePipe(this.format, this.forceMask);
       }
       if (inputs['minDate'] && inputs['minDate'] === 'today') {
@@ -69,7 +72,7 @@ export class BaseDateFormatComponent extends BaseFieldComponet {
     const errors = this.getTranslations();
     for (let i in errors) {
       if (this.field.hasError(i)) {
-        if(this['get_' + i]) {
+        if (this['get_' + i]) {
           return this['get_' + i](errors[i]);
         }
         return errors[i];

@@ -1,4 +1,3 @@
-
 export function createAutoCorrectedDatePipe(dateFormat = 'YYYY-MM-DD', forceMask = false) {
   return function (conformedValue) {
     if (!forceMask) {

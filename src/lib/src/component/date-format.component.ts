@@ -3,7 +3,7 @@ import { Component, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 
 /* Own modules */
-import { BaseDateFormatComponent } from './base-date-format.component';
+import { BaseDateFormatComponent } from '../reusable/base-date-format.component';
 
 @Component({
     selector: 'date-format',
