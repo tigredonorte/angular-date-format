@@ -102,7 +102,7 @@ package-lock.json
 .env
 
 
-### Typings ###
+#### Typings ####
 ## Ignore downloaded typings
 typings
 
