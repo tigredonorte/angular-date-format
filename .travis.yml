@@ -19,12 +19,12 @@ before_install:
 
 install:
   - "npm install -g @angular/cli@${CLI_VERSION}"
-  - "npm install rxjs@${RX_VERSION}"
-  - "npm install typescript@${TS_VERSION}"
   - "npm install @angular/common@${NG_VERSION} @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION}"
   - "npm install @angular/http@${NG_VERSION} @angular/platform-browser@${NG_VERSION} @angular/platform-browser-dynamic@${NG_VERSION}"
   - "npm install @angular/compiler@${NG_VERSION} @angular/compiler-cli@${NG_VERSION}"
   - "npm install @angular/animations@${NG_VERSION} @angular/cdk@${MAT_VERSION} @angular/material@${MAT_VERSION}"
+  - "npm install rxjs@${RX_VERSION}"
+  - "npm install typescript@${TS_VERSION}"
   - "npm install"
 
 script:
