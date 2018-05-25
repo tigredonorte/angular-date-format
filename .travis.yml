@@ -29,7 +29,7 @@ script:
 - npm run build
 - npm run test:once
 before_deploy:
-- cd lib
+- cd dist
 deploy:
   skip_cleanup: true
   provider: npm
