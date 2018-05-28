@@ -47,5 +47,4 @@ deploy:
     branch: develop
   api_key:
     secure: X4hyFqW10/eKgcCT2Blh44OxCotmkck2rv5rrQB5bs7BPO6yGVu/Oy9xBnbV26HBnm5FE0xnbngy4ffmfzlQ12ZiyiqG/881EKB5mFNbkroX1zRSsKCh8fCRqgMP7nJ1OVAlUNHGZVP7yqG94i7hRkFCmMipvMYfWd6iKZY+bEl4Fqe6Q9l3+4tZN9eeSCNJXvU1QMD1fsIcxbrdjW9eC8IuPQArX9slqb8gJ+JprcY3cUO4nmDCpuMPBF+/3ur9rM4Qw8zM6sWo5F2v5PGfpHTT6m+UcLWUo5BP69QReSVnudPYOPKxXXQ4PRcCud5XLlEdlWwkKrRypPbZKAKcASfbzvz+k9Kqv+CvEYVScz3XeTz2z7cd0pulaHHSJ3/bxP88i9niPBf+ONIlH9mgE4CNH18K3myyTX/QcfcSnUbEpA76iy121Ir1VxR1T+v5NKAC8NYC0jlHINYwTVglkjCUXrEumtYvawvBOQyTtBzXWmu1u0Zcko3m7UWJ2hTobHbEV8IVmDWM9a+nN547WSycQEYqb5RLEe6bEuQKjuANvvy/S8WFznJD2omuW+2qiTr++Yk6mK+FRl22GT9mwcmtUVVBwy1qAAZjpR07Lf9Ju0wKT7OiJ/AwTKVA+hmj1iTmK4urkOyPx1ct4UzhofRGTu3XpJYttJgcPYi2lcs=
-  file_glob: true
-  file: '**/*'
+  file: ''
