@@ -4,6 +4,9 @@ cache:
   - "~/.npm"
 notifications:
   email: false
+branches:
+  except:
+- /^v?\d+\.\d+\.\d+$/
 node_js:
 - node
 - '6'
@@ -13,6 +16,11 @@ env:
 - NG_VERSION=5 TS_VERSION=2.4.2 MAT_VERSION=5 CLI_VERSION=1.7.4 RX_VERSION=5.5.6 RAMDA_VERSION=0.25.0
   MOMENT_VERSION=2.19
 before_install:
+  # Create a git tag of the new version to use
+  # If package.json major and minor versions match last tag, then increment last tag. Else use package.json major.minor.0.
+- "{ sed -nE 's/^[ \\t]*\"version\": \"([0-9]{1,}\\.[0-9]{1,}\\.)[0-9x]{1,}\",$/\\1/p' package.json; git describe --abbrev=0 | sed -E 's/^v([0-9]{1,}\\.[0-9]{1,}\\.)([0-9]{1,})$/\\1 \\2/g'; } | tr \"\\n\" \" \" | awk '{printf($1==$2?\"v\"$2$3+1:\"v\"$1\"0\")}' | xargs -I {} git tag -a {} -m \"{}\"\n"
+  # Update package.json based on the git tag we just created
+- npm --no-git-tag-version version from-git
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -31,11 +39,16 @@ script:
 before_deploy:
 - cd dist
 deploy:
-  skip_cleanup: true
-  provider: npm
-  email: tigredonorte3@gmail.com
-  on:
-    repo: gorilainvest/angular-date-format
-    branch: master
-  api_key:
-    secure: b3KLwUF2w5iINZ/N9SBoK+nKdKD7szznfURtYWv1NDcEBs+MYs1HC2k9+imwqci7r5QBuj054zK2hiMExCNYDqLFnmM2KXkS5yED1CVXOXzkDBYYQ664JK8NkuODPth4wmGKLS1HfybDPJCX+WSTQFkTXbGoFIWXgmVxo7N6NrrfNo+MbgeQq0fV+UJLZUC9Zhfyz0lb9yliskp7j4wqNEeIOhsXKmxdvGth8SDo7ERryPa+C61XXsEwwr5ym0UuvLjVVvxK1NIV0YVsapKXg8qmVPulmBPLj19aZL1uT9y4vXe362l43mJ1EbkvpW1MhZxAvmGEc55FeHXNWoOEDOB78Fauu23bDXgJvPW+cU0DtbWG+wkaaE0LJaKrFPB6JsveMWM/KuLW9yk4KQsT1RJfcQo7k1owzskL84KCz/Dvr6HkviNGCjoUvlEoxWVZxPHTw/04L4FXfRwvLsvjlYffJxzTGuBvyfqP0vKXvhJ9g9BYCnog6bfmVc8ynnFUqUw662wL3PGuJN3kQrHph+hwx25Hg48+Yo56Ywd00nk06pxNdgMjERBxDXJr/iM3vonT58Rh3VdYoZFEx6+KRmDYPEsEWA9B87LCyZyqJqafS6P3zrDt6h/kKEkD6+mwT7BbOAbLAtXp6yrSinerWMwAyQPjTnzvKZvyWnJFWSU=
+- provider: script
+    skip_cleanup: true
+    script: git push --tags
+    on:
+      branch: master
+- provider: npm
+    skip_cleanup: true
+    email: tigredonorte3@gmail.com
+    on:
+      repo: gorilainvest/angular-date-format
+      branch: master
+    api_key:
+      secure: b3KLwUF2w5iINZ/N9SBoK+nKdKD7szznfURtYWv1NDcEBs+MYs1HC2k9+imwqci7r5QBuj054zK2hiMExCNYDqLFnmM2KXkS5yED1CVXOXzkDBYYQ664JK8NkuODPth4wmGKLS1HfybDPJCX+WSTQFkTXbGoFIWXgmVxo7N6NrrfNo+MbgeQq0fV+UJLZUC9Zhfyz0lb9yliskp7j4wqNEeIOhsXKmxdvGth8SDo7ERryPa+C61XXsEwwr5ym0UuvLjVVvxK1NIV0YVsapKXg8qmVPulmBPLj19aZL1uT9y4vXe362l43mJ1EbkvpW1MhZxAvmGEc55FeHXNWoOEDOB78Fauu23bDXgJvPW+cU0DtbWG+wkaaE0LJaKrFPB6JsveMWM/KuLW9yk4KQsT1RJfcQo7k1owzskL84KCz/Dvr6HkviNGCjoUvlEoxWVZxPHTw/04L4FXfRwvLsvjlYffJxzTGuBvyfqP0vKXvhJ9g9BYCnog6bfmVc8ynnFUqUw662wL3PGuJN3kQrHph+hwx25Hg48+Yo56Ywd00nk06pxNdgMjERBxDXJr/iM3vonT58Rh3VdYoZFEx6+KRmDYPEsEWA9B87LCyZyqJqafS6P3zrDt6h/kKEkD6+mwT7BbOAbLAtXp6yrSinerWMwAyQPjTnzvKZvyWnJFWSU=
