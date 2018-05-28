@@ -4,9 +4,6 @@ cache:
   - "~/.npm"
 notifications:
   email: false
-branches:
-  except:
-- /^v?\d+\.\d+\.\d+$/
 node_js:
 - node
 - '6'
@@ -16,11 +13,6 @@ env:
 - NG_VERSION=5 TS_VERSION=2.4.2 MAT_VERSION=5 CLI_VERSION=1.7.4 RX_VERSION=5.5.6 RAMDA_VERSION=0.25.0
   MOMENT_VERSION=2.19
 before_install:
-  # Create a git tag of the new version to use
-  # If package.json major and minor versions match last tag, then increment last tag. Else use package.json major.minor.0.
-- "{ sed -nE 's/^[ \\t]*\"version\": \"([0-9]{1,}\\.[0-9]{1,}\\.)[0-9x]{1,}\",$/\\1/p' package.json; git describe --abbrev=0 | sed -E 's/^v([0-9]{1,}\\.[0-9]{1,}\\.)([0-9]{1,})$/\\1 \\2/g'; } | tr \"\\n\" \" \" | awk '{printf($1==$2?\"v\"$2$3+1:\"v\"$1\"0\")}' | xargs -I {} git tag -a {} -m \"{}\"\n"
-  # Update package.json based on the git tag we just created
-- npm --no-git-tag-version version from-git
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -39,13 +31,7 @@ script:
 before_deploy:
 - cd dist
 deploy:
-- provider: script
-  skip_cleanup: true
-  script: git push --tags
-  on:
-    repo: tigredonorte/angular-date-format
-    branch: develop
-- provider: npm
+  provider: npm
   skip_cleanup: true
   email: tigredonorte3@gmail.com
   on:
