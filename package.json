@@ -29,7 +29,7 @@
     "npm": ">= 3.0.0"
   },
   "keywords": [
-    "angular"
+    "angular", "date"
   ],
   "scripts": {
     "clean": "rimraf out-tsc dist/*",
