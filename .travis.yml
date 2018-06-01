@@ -29,14 +29,20 @@ script:
 - npm run build
 - npm run test:once
 before_deploy:
-- "{ sed -nE 's/^[ \\t]*\"version\": \"([0-9]{1,}\\.[0-9]{1,}\\.)[0-9x]{1,}\",$/\\1/p' package.json; git describe --abbrev=0 | sed -E 's/^v([0-9]{1,}\\.[0-9]{1,}\\.)([0-9]{1,})$/\\1 \\2/g'; } | tr \"\\n\" \" \" | awk '{printf($1==$2?\"v\"$2$3+1:\"v\"$1$3\")}' | xargs -I {} git tag -a {} -m \"{}\"\n"
+- '{ sed -nE ''s/^[ \t]*"version": "([0-9]{1,}\.[0-9]{1,}\.)[0-9x]{1,}",$/\1/p'' package.json;
+  git describe --abbrev=0 | sed -E ''s/^v([0-9]{1,}\.[0-9]{1,}\.)([0-9]{1,})$/\1 \2/g'';
+  } | tr "\n" " " | awk ''{printf($1==$2?"v"$2$3+1:"v"$1$3")}'' | xargs -I {} git
+  tag -a {} -m "{}"
+
+'
 - cd dist
 deploy:
-- provider: npm
-  skip_cleanup: true
-  email: tigredonorte3@gmail.com
-  on:
-    repo: tigredonorte/angular-date-format
-    branch: develop
-  api_key:
-    secure: CuBfB6Cp1mlGJou7PyBWgzJlPz5MNEbhl6kK3QSCs6mDfwZafe3PZ2hrqRgJZ7CVmHQZIc4+0ZU7/g84DpDvIRTnN/hHt8dnLOrLSGCtgdm9Cycf8hgpYNBOEezxO+t89fzTE05izmoABVlL1743XyURqpqMmhOCirruh2tBk+l5rh00VonsKdvZJUR4CYlSOkGRa6EoZbgiR33VP7U6NVJKNd3JHetxEE4Oh6EjMW8c6w360q0Kz9wS38v3z7Cu0rSZ/ps7lS+XDjeUvS/dMrSHZrX9rGtYS1fiigQyCnuoVxeadBpjylpMM7d2pMf1ciMmdoU/5ONN+/IvZUXPx2AcXGpYSExay3jpV1HcHqhYKiVlaRcnBpN3x7h9h2VtqAoLnVUP3ekpp++99bQey1t16IfzZpv+R2CGwWnW8btStwuQ8LptmGwxMttkI0Iu5jpx5ApdFcv3WgQ/8Qmm6mN4luyip28ltA1qvskHIyLsnz5RqCqUZxKpa8OGCgDY68Uzs7OcWcTlPRsFP8OTBt18q2cpezo7XXoRP0MkgJh+iLdtefo8OJ2QWJE9G7tu/2RZFoVHO1W0aYRikrz8rPgMaQwGDNMr1KBMcX1DcDw9G60r2AOWWsVNk3/enyADYzFfHZhLMa+PCFtOT1URU8nVv2NGD+qpNj+BYMbxWqc=
+  matrix:
+  - provider: npm
+    skip_cleanup: true
+    email: tigredonorte3@gmail.com
+    on:
+      repo: tigredonorte/angular-date-format
+      branch: develop
+    api_key:
+      secure: QrexzUg7cl2saDRl5cb3ExM9c+T+VJoY1xHADRuZAm8Hxqr6Ko6gotPXiHGCt8gcF9GVRfOV0PzmnyMoSYQihbicMIvjmGmR6ihBjai1wvtiCK9YGOzkgu3rPqftplP+LDqJJtO10DqBUhzd0hC/zAxQa5+wx+KcUyUty56ZZqeTew04+Kba/rFAEMo5eQIhXwclyjgFuPkWU7er4dEuDoAd0Ir9q4dh6X2S+FAn4HR3RRZwwmMo4zBa6XkfjMuRKunfkPwdWIuFD593tg/Mo1h19xNLBtZCzU9UdP3g0NKSBmAchGxjbdHdDD7pQvMuza1ogGXsmDnVkpFRkNEh7EiTvUoo4ZAaVCzYjn2H97tMqACNagmyCsin7Dj6sDskEOb3oZVosv+P+H1oJXiV443Jx2udu1U0Ul4JhjmmSWMg+qdt9zGVHxBIKpGpoxxAleJaZGx9WJ9zoBRkJpJduWB9BO6VOxWD9rRK9ptDE6p8VSdsP8JDSVBj4Irc0uqo9tqdB9Fzh/PxRP8daWtLyZ0iwu00pZbs60xBXwWoIdFgHtQ1sokvA1UdP+IBP91ZcmY+UQGiYKzu3szi5sNE/F/H3sCXlxnSyVr87IIwrnMI5I4cHJcINfc3F2qjpzFK2w9r9V6dTirRJNgEHNN20VwN2zFbrujmpuaeHSz13qA=
