@@ -37,12 +37,11 @@ before_deploy:
 '
 - cd dist
 deploy:
-  matrix:
-  - provider: npm
-    skip_cleanup: true
-    email: tigredonorte3@gmail.com
-    on:
-      repo: gorilainvest/angular-date-format
-      branch: master
-    api_key:
-      secure: QrexzUg7cl2saDRl5cb3ExM9c+T+VJoY1xHADRuZAm8Hxqr6Ko6gotPXiHGCt8gcF9GVRfOV0PzmnyMoSYQihbicMIvjmGmR6ihBjai1wvtiCK9YGOzkgu3rPqftplP+LDqJJtO10DqBUhzd0hC/zAxQa5+wx+KcUyUty56ZZqeTew04+Kba/rFAEMo5eQIhXwclyjgFuPkWU7er4dEuDoAd0Ir9q4dh6X2S+FAn4HR3RRZwwmMo4zBa6XkfjMuRKunfkPwdWIuFD593tg/Mo1h19xNLBtZCzU9UdP3g0NKSBmAchGxjbdHdDD7pQvMuza1ogGXsmDnVkpFRkNEh7EiTvUoo4ZAaVCzYjn2H97tMqACNagmyCsin7Dj6sDskEOb3oZVosv+P+H1oJXiV443Jx2udu1U0Ul4JhjmmSWMg+qdt9zGVHxBIKpGpoxxAleJaZGx9WJ9zoBRkJpJduWB9BO6VOxWD9rRK9ptDE6p8VSdsP8JDSVBj4Irc0uqo9tqdB9Fzh/PxRP8daWtLyZ0iwu00pZbs60xBXwWoIdFgHtQ1sokvA1UdP+IBP91ZcmY+UQGiYKzu3szi5sNE/F/H3sCXlxnSyVr87IIwrnMI5I4cHJcINfc3F2qjpzFK2w9r9V6dTirRJNgEHNN20VwN2zFbrujmpuaeHSz13qA=
+- provider: npm
+  skip_cleanup: true
+  email: tigredonorte3@gmail.com
+  on:
+    repo: gorilainvest/angular-date-format
+    branch: master
+  api_key:
+    secure: QrexzUg7cl2saDRl5cb3ExM9c+T+VJoY1xHADRuZAm8Hxqr6Ko6gotPXiHGCt8gcF9GVRfOV0PzmnyMoSYQihbicMIvjmGmR6ihBjai1wvtiCK9YGOzkgu3rPqftplP+LDqJJtO10DqBUhzd0hC/zAxQa5+wx+KcUyUty56ZZqeTew04+Kba/rFAEMo5eQIhXwclyjgFuPkWU7er4dEuDoAd0Ir9q4dh6X2S+FAn4HR3RRZwwmMo4zBa6XkfjMuRKunfkPwdWIuFD593tg/Mo1h19xNLBtZCzU9UdP3g0NKSBmAchGxjbdHdDD7pQvMuza1ogGXsmDnVkpFRkNEh7EiTvUoo4ZAaVCzYjn2H97tMqACNagmyCsin7Dj6sDskEOb3oZVosv+P+H1oJXiV443Jx2udu1U0Ul4JhjmmSWMg+qdt9zGVHxBIKpGpoxxAleJaZGx9WJ9zoBRkJpJduWB9BO6VOxWD9rRK9ptDE6p8VSdsP8JDSVBj4Irc0uqo9tqdB9Fzh/PxRP8daWtLyZ0iwu00pZbs60xBXwWoIdFgHtQ1sokvA1UdP+IBP91ZcmY+UQGiYKzu3szi5sNE/F/H3sCXlxnSyVr87IIwrnMI5I4cHJcINfc3F2qjpzFK2w9r9V6dTirRJNgEHNN20VwN2zFbrujmpuaeHSz13qA=
