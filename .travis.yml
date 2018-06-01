@@ -37,7 +37,7 @@ before_deploy:
 '
 - cd dist
 deploy:
-- provider: npm
+  provider: npm
   skip_cleanup: true
   email: tigredonorte3@gmail.com
   on:
